@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export type MenuItemStyledProps = {
-  isOpened: boolean;
+  isMenuOpened: boolean;
 };
 
 const MenuItemStyled = styled.div<MenuItemStyledProps>`
@@ -13,7 +13,7 @@ const MenuItemStyled = styled.div<MenuItemStyledProps>`
     overflow: hidden;
     padding: 0.5rem 0.25rem;
 
-    > *:first-of-type {
+    > *:first-child {
       flex-shrink: 0;
     }
 
@@ -22,11 +22,12 @@ const MenuItemStyled = styled.div<MenuItemStyledProps>`
     }
 
     > h4 {
-      opacity: ${({ isOpened }) => (isOpened ? 1 : 0)};
+      display: ${({ isMenuOpened }) => (isMenuOpened ? 'inherit' : 'none')};
       transition: opacity 0.3s linear;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      margin-left: 0.5rem;
     }
   }
 `;

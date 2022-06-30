@@ -8,7 +8,7 @@ const MenuTitleStyled = styled.div<MenuTitleStyledProps>`
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0.5rem 0.25rem;
 
   > *:first-of-type {
@@ -30,6 +30,7 @@ const MenuTitleStyled = styled.div<MenuTitleStyledProps>`
       font-size: 1.125rem;
       opacity: ${({ isOpened }) => (isOpened ? 1 : 0)};
       transition: opacity 0.3s linear;
+      margin-left: ${({ isOpened }) => (isOpened ? '0.5rem' : 0)};
     }
   }
 `;
