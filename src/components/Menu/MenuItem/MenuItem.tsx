@@ -1,32 +1,24 @@
-import React, { HTMLAttributes, PropsWithChildren, ReactElement } from 'react';
+import React, { HTMLAttributes, PropsWithChildren, ReactElement, useContext } from 'react';
 
-import MenuItemStyled, { MenuItemStyledProps } from './MenuItem.styled';
-import { MenuSubItemStyledProps } from '~/components/Menu/MenuSubItem/MenuSubItem.styled';
+import { MenuContext } from '~/components/Menu/Menu';
+
+import MenuItemStyled from './MenuItem.styled';
 
 type MenuItemProps = {
   icon: ReactElement;
   label: string;
-} & Partial<MenuItemStyledProps> &
-  HTMLAttributes<any>;
+} & HTMLAttributes<any>;
 
-const MenuItem = ({
-  children,
-  icon,
-  label,
-  isMenuOpened,
-  ...props
-}: PropsWithChildren<MenuItemProps>) => {
+const MenuItem = ({ children, icon, label, ...props }: PropsWithChildren<MenuItemProps>) => {
+  const { isMenuOpened } = useContext(MenuContext);
+
   return (
     <MenuItemStyled isMenuOpened={isMenuOpened} {...props}>
       <div className="item">
         {icon}
         <h4>{label}</h4>
       </div>
-      <div className="list">
-        {React.Children.map(children, (child: React.ReactElement<MenuSubItemStyledProps>) =>
-          React.cloneElement(child, { isMenuOpened })
-        )}
-      </div>
+      <div className="list">{children}</div>
     </MenuItemStyled>
   );
 };

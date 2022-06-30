@@ -1,22 +1,25 @@
-import React, { HTMLAttributes, PropsWithChildren, ReactElement, useState } from 'react';
+import React, {
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactElement,
+  useContext,
+  useState,
+} from 'react';
 
 import { SolidArrowIcon } from '~/components/Icons';
-import MenuSubItemStyled, { MenuSubItemStyledProps } from './MenuSubItem.styled';
+import { MenuContext } from '~/components/Menu/Menu';
+
+import MenuSubItemStyled from './MenuSubItem.styled';
 
 type MenuSubItemProps = {
   icon: ReactElement;
   label: string;
-} & Partial<MenuSubItemStyledProps> &
-  HTMLAttributes<any>;
+} & HTMLAttributes<any>;
 
-const MenuSubItem = ({
-  children,
-  icon,
-  label,
-  isMenuOpened,
-  ...props
-}: PropsWithChildren<MenuSubItemProps>) => {
+const MenuSubItem = ({ children, icon, label, ...props }: PropsWithChildren<MenuSubItemProps>) => {
   const [isSubItemOpened, setIsSubItemOpened] = useState(true);
+
+  const { isMenuOpened } = useContext(MenuContext);
 
   return (
     <MenuSubItemStyled
