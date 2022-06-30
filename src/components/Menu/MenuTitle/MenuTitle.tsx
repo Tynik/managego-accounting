@@ -14,7 +14,6 @@ const MenuTitle = ({
     HTMLAttributes<any>
 >) => {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <MenuTitleStyled isOpened={isOpened} {...props}>
       {React.cloneElement(icon, { style: { width: '24px', height: '24px' } })}
       <div>{children}</div>

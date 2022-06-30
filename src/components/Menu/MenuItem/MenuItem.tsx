@@ -17,13 +17,12 @@ const MenuItem = ({
   ...props
 }: PropsWithChildren<MenuItemProps>) => {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <MenuItemStyled isMenuOpened={isMenuOpened} {...props}>
-      <div>
+      <div className="item">
         {React.cloneElement(icon, { style: { width: '24px', height: '24px' } })}
         <h4>{label}</h4>
       </div>
-      <div>
+      <div className="list">
         {React.Children.map(children, (child: React.ReactElement<MenuSubItemStyledProps>) =>
           React.cloneElement(child, { isMenuOpened })
         )}

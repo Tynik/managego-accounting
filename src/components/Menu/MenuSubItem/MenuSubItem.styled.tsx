@@ -7,7 +7,7 @@ export type MenuSubItemStyledProps = {
 };
 
 const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
-  .item {
+  > .item {
     display: flex;
     align-items: center;
     margin: 0.625rem 0.25rem 0;
@@ -18,7 +18,7 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
       background-color: #3e7694;
     }
 
-    .icon {
+    > .arrow {
       width: 1.5rem;
       height: 1.5rem;
       flex-shrink: 0;
@@ -26,12 +26,14 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
       visibility: ${({ areWithItems }) => (areWithItems ? 'visible' : 'hidden')};
     }
 
-    > *:nth-of-type(2) {
+    > .name {
       display: flex;
       align-items: center;
       padding: 0.5rem ${({ isMenuOpened }) => (isMenuOpened ? '0.625rem' : '0.25rem')};
 
-      > *:first-child {
+      > .icon {
+        width: 1.5rem;
+        height: 1.5rem;
         background-color: white;
         margin-right: 0.25rem;
         border-radius: 0.25rem;

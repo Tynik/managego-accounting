@@ -5,20 +5,20 @@ export type MenuItemStyledProps = {
 };
 
 const MenuItemStyled = styled.div<MenuItemStyledProps>`
-  > *:first-of-type {
+  > .item {
     display: flex;
     align-items: center;
     cursor: pointer;
-    border-radius: 8px;
     overflow: hidden;
+    border-radius: 0.5rem;
     padding: 0.5rem 0.25rem;
-
-    > *:first-child {
-      flex-shrink: 0;
-    }
 
     &:hover {
       background-color: #3e7694;
+    }
+
+    > .icon {
+      flex-shrink: 0;
     }
 
     > h4 {

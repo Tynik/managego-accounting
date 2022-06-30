@@ -5,8 +5,7 @@ import Dashboard from '~/assets/dashboard.svg';
 
 const DashboardIcon = props => {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <IconStyled {...props}>
+    <IconStyled className="icon" {...props}>
       <Dashboard />
     </IconStyled>
   );

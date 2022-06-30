@@ -4,12 +4,14 @@ import { ThemeProvider } from '@emotion/react';
 import GlobalStyles from '~/GlobalStyles';
 import Container from '~/components/Container';
 import DashboardIcon from '~/components/Icons/DashboardIcon';
+import { TopBar } from '~/components/TopBar';
 import { Menu, MenuItem, MenuSubItem } from '~/components/Menu';
-import light from '~/themes/light';
+
+import lightTheme from '~/themes/light';
 
 const App = () => {
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
       <Container>
         <Menu title="Accounting">
@@ -31,7 +33,9 @@ const App = () => {
           </MenuItem>
         </Menu>
 
-        <main style={{ flexGrow: 1 }}>Reports</main>
+        <main style={{ flexGrow: 1 }}>
+          <TopBar title="Reports" />
+        </main>
       </Container>
     </ThemeProvider>
   );

@@ -21,7 +21,7 @@ const Menu = ({ children, title }: PropsWithChildren<MenuProps>) => {
         <h4>{title}</h4>
 
         <IconButton onClick={() => setIsOpened(!isOpened)}>
-          <ArrowsIcon rotate={!isOpened} />
+          <ArrowsIcon rotate={isOpened ? 0 : 180} />
         </IconButton>
       </MenuTitle>
 

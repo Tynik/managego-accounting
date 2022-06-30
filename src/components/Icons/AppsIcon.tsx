@@ -5,8 +5,7 @@ import Apps from '~/assets/apps.svg';
 
 const AppsIcon = props => {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <IconStyled {...props}>
+    <IconStyled className="icon" {...props}>
       <Apps />
     </IconStyled>
   );
