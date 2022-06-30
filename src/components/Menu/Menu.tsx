@@ -1,30 +1,27 @@
 import React, { PropsWithChildren, useState } from 'react';
 
 import { IconButton } from '~/components/IconButton';
-import AppsIcon from '~/components/Icons/AppsIcon';
-import ArrowIcon from '~/components/Icons/ArrowIcon';
-import MenuItem from '~/components/Menu/MenuItem';
+import { AppsIcon, ArrowsIcon } from '~/components/Icons';
+import { MenuTitle } from '~/components/Menu';
+
 import MenuStyled from './Menu.styled';
 
-const Menu = ({ children }: PropsWithChildren) => {
+type MenuProps = {
+  title: string;
+};
+
+const Menu = ({ children, title }: PropsWithChildren<MenuProps>) => {
   const [isOpened, setIsOpened] = useState(true);
 
   return (
     <MenuStyled open={isOpened} aria-hidden={!isOpened}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <MenuItem
-          isOpened={isOpened}
-          icon={<AppsIcon />}
-          style={{ fontWeight: 600 }}
-          hideIconWhenClosed
-        >
-          Accounting
-        </MenuItem>
+      <MenuTitle isOpened={isOpened} icon={<AppsIcon />}>
+        <h4>{title}</h4>
 
         <IconButton onClick={() => setIsOpened(!isOpened)}>
-          <ArrowIcon rotate={!isOpened} />
+          <ArrowsIcon rotate={!isOpened} />
         </IconButton>
-      </div>
+      </MenuTitle>
 
       {React.Children.map(children, (child: React.ReactElement<any>) =>
         React.cloneElement(child, { isOpened })

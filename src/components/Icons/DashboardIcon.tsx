@@ -3,9 +3,10 @@ import React from 'react';
 import IconStyled from '~/components/Icons/Icon.styled';
 import Dashboard from '~/assets/dashboard.svg';
 
-const DashboardIcon = () => {
+const DashboardIcon = props => {
   return (
-    <IconStyled>
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <IconStyled {...props}>
       <Dashboard />
     </IconStyled>
   );
