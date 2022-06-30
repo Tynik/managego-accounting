@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 export type MenuSubItemStyledProps = {
   isMenuOpened: boolean;
   isSubItemOpened: boolean;
   areWithItems: boolean;
+  active?: boolean;
 };
 
 const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
@@ -14,9 +16,20 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
     border-radius: 0.5rem;
     cursor: pointer;
 
-    &:hover {
-      background-color: #3e7694;
-    }
+    ${({ active }) =>
+      active &&
+      css`
+        color: #7b61ff;
+        background-color: #ece8ff;
+      `};
+
+    ${({ active }) =>
+      !active &&
+      css`
+        &:hover {
+          background-color: #3e7694;
+        }
+      `};
 
     > .arrow {
       flex-shrink: 0;

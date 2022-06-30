@@ -1,8 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from '@emotion/react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import GlobalStyles from '~/GlobalStyles';
-import { Container, TopBar, Menu, MenuItem, MenuSubItem } from '~/components';
+import { Container, Main, Menu, MenuItem, MenuSubItem } from '~/components';
 import {
   DashboardIcon,
   BuildingIcon,
@@ -12,10 +13,14 @@ import {
   DollarIcon,
   SettingsIcon,
 } from '~/icons';
+import { ReportsPage } from '~/pages/ReportsPage';
 
 import lightTheme from '~/themes/light';
 
 const App = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
@@ -32,16 +37,38 @@ const App = () => {
               <h6>Pay Bills</h6>
               <h6>Payroll</h6>
             </MenuSubItem>
-            <MenuSubItem label="Banking/Accounting" icon={<BankIcon />} />
-            <MenuSubItem label="Reports" icon={<ReportsIcon />} />
-            <MenuSubItem label="Ledger" icon={<DollarIcon />} />
-            <MenuSubItem label="Setup" icon={<SettingsIcon />} />
+            <MenuSubItem
+              label="Banking/Accounting"
+              icon={<BankIcon />}
+              onClick={() => navigate('/banking')}
+              active={location.pathname === '/banking'}
+            />
+            <MenuSubItem
+              label="Reports"
+              icon={<ReportsIcon />}
+              onClick={() => navigate('/reports')}
+              active={location.pathname === '/reports'}
+            />
+            <MenuSubItem
+              label="Ledger"
+              icon={<DollarIcon />}
+              onClick={() => navigate('/ledger')}
+              active={location.pathname === '/ledger'}
+            />
+            <MenuSubItem
+              label="Setup"
+              icon={<SettingsIcon />}
+              onClick={() => navigate('/setup')}
+              active={location.pathname === '/setup'}
+            />
           </MenuItem>
         </Menu>
 
-        <main style={{ flexGrow: 1 }}>
-          <TopBar title="Reports" />
-        </main>
+        <Main>
+          <Routes>
+            <Route path="reports" element={<ReportsPage />} />
+          </Routes>
+        </Main>
       </Container>
     </ThemeProvider>
   );

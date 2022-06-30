@@ -14,12 +14,19 @@ import MenuSubItemStyled from './MenuSubItem.styled';
 type MenuSubItemProps = {
   icon: ReactElement;
   label: string;
+  active?: boolean;
 } & HTMLAttributes<any>;
 
 const MenuSubItem = ({ children, icon, label, ...props }: PropsWithChildren<MenuSubItemProps>) => {
   const { isMenuOpened } = useContext(MenuContext);
 
   const [isSubItemOpened, setIsSubItemOpened] = useState(true);
+
+  const onItemClickHandler = () => {
+    if (children) {
+      setIsSubItemOpened(!isSubItemOpened);
+    }
+  };
 
   return (
     <MenuSubItemStyled
@@ -29,7 +36,7 @@ const MenuSubItem = ({ children, icon, label, ...props }: PropsWithChildren<Menu
       {...props}
     >
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-      <div className="item" onClick={() => setIsSubItemOpened(!isSubItemOpened)}>
+      <div className="item" onClick={onItemClickHandler}>
         <SolidArrowIcon className="arrow" rotate={isSubItemOpened ? 90 : 0} />
         <div className="name">
           {icon}
