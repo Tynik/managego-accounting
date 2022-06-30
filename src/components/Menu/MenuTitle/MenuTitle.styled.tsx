@@ -11,12 +11,12 @@ const MenuTitleStyled = styled.div<MenuTitleStyledProps>`
   border-radius: 0.5rem;
   padding: 0.5rem 0.25rem;
 
-  > *:first-of-type {
+  > .icon {
     flex-shrink: 0;
     display: ${({ isOpened }) => (isOpened ? 'inherit' : 'none')};
   }
 
-  > *:last-of-type {
+  > .content {
     display: flex;
     align-items: center;
     justify-content: space-between;

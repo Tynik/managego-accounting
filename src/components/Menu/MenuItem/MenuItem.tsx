@@ -19,7 +19,7 @@ const MenuItem = ({
   return (
     <MenuItemStyled isMenuOpened={isMenuOpened} {...props}>
       <div className="item">
-        {React.cloneElement(icon, { style: { width: '24px', height: '24px' } })}
+        {icon}
         <h4>{label}</h4>
       </div>
       <div className="list">

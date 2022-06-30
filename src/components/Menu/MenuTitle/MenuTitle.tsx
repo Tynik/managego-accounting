@@ -15,8 +15,8 @@ const MenuTitle = ({
 >) => {
   return (
     <MenuTitleStyled isOpened={isOpened} {...props}>
-      {React.cloneElement(icon, { style: { width: '24px', height: '24px' } })}
-      <div>{children}</div>
+      {icon}
+      <div className="content">{children}</div>
     </MenuTitleStyled>
   );
 };

@@ -19,8 +19,6 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
     }
 
     > .arrow {
-      width: 1.5rem;
-      height: 1.5rem;
       flex-shrink: 0;
       display: ${({ isMenuOpened }) => (isMenuOpened ? 'inherit' : 'none')};
       visibility: ${({ areWithItems }) => (areWithItems ? 'visible' : 'hidden')};
@@ -29,11 +27,9 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
     > .name {
       display: flex;
       align-items: center;
-      padding: 0.5rem ${({ isMenuOpened }) => (isMenuOpened ? '0.625rem' : '0.25rem')};
+      padding: 0.5rem 0.25rem;
 
       > .icon {
-        width: 1.5rem;
-        height: 1.5rem;
         background-color: white;
         margin-right: 0.25rem;
         border-radius: 0.25rem;
