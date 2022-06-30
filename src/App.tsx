@@ -2,8 +2,7 @@ import React from 'react';
 import { ThemeProvider } from '@emotion/react';
 
 import GlobalStyles from '~/GlobalStyles';
-import Container from '~/components/Container';
-import { TopBar } from '~/components/TopBar';
+import { Container, TopBar, Menu, MenuItem, MenuSubItem } from '~/components';
 import {
   DashboardIcon,
   BuildingIcon,
@@ -12,8 +11,7 @@ import {
   ReportsIcon,
   DollarIcon,
   SettingsIcon,
-} from '~/components/Icons';
-import { Menu, MenuItem, MenuSubItem } from '~/components/Menu';
+} from '~/icons';
 
 import lightTheme from '~/themes/light';
 

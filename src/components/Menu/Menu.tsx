@@ -1,8 +1,7 @@
 import React, { createContext, PropsWithChildren, useMemo, useState } from 'react';
 
-import { IconButton } from '~/components/IconButton';
-import { AppsIcon, ArrowsIcon } from '~/components/Icons';
-import { MenuTitle } from '~/components/Menu';
+import { IconButton, MenuTitle } from '~/components';
+import { AppsIcon, ArrowsIcon } from '~/icons';
 
 import MenuStyled from './Menu.styled';
 

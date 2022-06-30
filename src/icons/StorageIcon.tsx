@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IconStyled from '~/components/Icons/Icon.styled';
+import IconStyled from '~/icons/Icon.styled';
 import Storage from '~/assets/storage.svg';
 
 const StorageIcon = props => {

@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 
-import { SolidArrowIcon } from '~/components/Icons';
+import { SolidArrowIcon } from '~/icons';
 import { MenuContext } from '~/components/Menu/Menu';
 
 import MenuSubItemStyled from './MenuSubItem.styled';
@@ -17,9 +17,9 @@ type MenuSubItemProps = {
 } & HTMLAttributes<any>;
 
 const MenuSubItem = ({ children, icon, label, ...props }: PropsWithChildren<MenuSubItemProps>) => {
-  const [isSubItemOpened, setIsSubItemOpened] = useState(true);
-
   const { isMenuOpened } = useContext(MenuContext);
+
+  const [isSubItemOpened, setIsSubItemOpened] = useState(true);
 
   return (
     <MenuSubItemStyled

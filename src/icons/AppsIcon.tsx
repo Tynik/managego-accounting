@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IconStyled from '~/components/Icons/Icon.styled';
+import IconStyled from '~/icons/Icon.styled';
 import Apps from '~/assets/apps.svg';
 
 const AppsIcon = props => {
