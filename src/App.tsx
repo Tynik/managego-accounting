@@ -3,7 +3,7 @@ import { ThemeProvider } from '@emotion/react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import GlobalStyles from '~/GlobalStyles';
-import { Container, Main, Menu, MenuItem, MenuSubItem } from '~/components';
+import { Container, Main, Menu, MenuItem, MenuSubItem, TopBar } from '~/components';
 import {
   DashboardIcon,
   BuildingIcon,
@@ -16,6 +16,7 @@ import {
 import { ReportsPage } from '~/pages/ReportsPage';
 
 import lightTheme from '~/themes/light';
+import { PAGES } from '~/constants';
 
 const App = () => {
   const navigate = useNavigate();
@@ -28,7 +29,8 @@ const App = () => {
         <Menu title="Accounting">
           <MenuItem icon={<DashboardIcon />} label="Dashboard">
             <MenuSubItem label="Property Management" icon={<BuildingIcon />}>
-              <h6>Residents</h6>
+              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+              <h6 onClick={() => navigate('/residents')}>Residents</h6>
               <h6>Transactions</h6>
               <h6>Entity/Buildings</h6>
             </MenuSubItem>
@@ -65,6 +67,8 @@ const App = () => {
         </Menu>
 
         <Main>
+          <TopBar title={PAGES[location.pathname]?.title} />
+
           <Routes>
             <Route path="reports" element={<ReportsPage />} />
           </Routes>

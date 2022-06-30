@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
 
-export type TopBarStyledProps = any;
-
-const TopBarStyled = styled.div<TopBarStyledProps>`
+const TopBarStyled = styled.div`
   display: flex;
   padding: 1.281rem 1.5rem;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
   align-items: center;
+  gap: 1rem;
 
   > h1 {
     font-size: 1.5rem;
