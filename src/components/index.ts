@@ -1,6 +1,7 @@
 export { default as Container } from './Container';
 export { default as Main } from './Main';
 export { default as Content } from './Content';
+export { default as ManageGoLogo } from './ManageGoLogoStyled';
 
 export * from './TopBar';
 export * from './ActionPanel';
