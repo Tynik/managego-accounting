@@ -4,7 +4,7 @@ const TableBodyStyled = styled.tbody`
   tr {
     position: relative;
 
-    &:not(:last-child):after {
+    &:not(:last-of-type):after {
       content: '';
       position: absolute;
       bottom: 0;

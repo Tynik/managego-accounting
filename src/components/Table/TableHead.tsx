@@ -7,7 +7,7 @@ export const TableHeadContext = createContext(false);
 const TableHead = ({ children, ...props }: PropsWithChildren<HTMLAttributes<any>>) => {
   return (
     <TableHeadStyled {...props}>
-      <TableHeadContext.Provider value>{children}</TableHeadContext.Provider>{' '}
+      <TableHeadContext.Provider value>{children}</TableHeadContext.Provider>
     </TableHeadStyled>
   );
 };

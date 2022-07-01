@@ -5,9 +5,13 @@ const TableHeadStyled = styled.thead`
   color: #5b5959;
   font-weight: 500;
 
-  th {
+  > tr > th {
     padding: 0.625rem;
     background-color: #f6f4ff;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid ${({ theme }) => theme.color.border};
+    }
   }
 `;
 
