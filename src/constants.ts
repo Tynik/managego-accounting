@@ -3,6 +3,9 @@ type PageInfo = {
 };
 
 export const PAGES: Record<string, PageInfo> = {
+  '/vendors-list': {
+    title: 'Vendors List',
+  },
   '/banking': {
     title: 'Banking/Accounting',
   },

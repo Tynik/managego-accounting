@@ -10,7 +10,7 @@ const TableHeadStyled = styled.thead`
     background-color: #f6f4ff;
 
     &:not(:last-of-type) {
-      border-right: 1px solid ${({ theme }) => theme.color.border};
+      border-right: 1px solid ${({ theme }) => theme.primary.color.border};
     }
   }
 `;

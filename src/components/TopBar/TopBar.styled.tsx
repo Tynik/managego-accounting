@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const TopBarStyled = styled.div`
   display: flex;
   padding: 1.281rem 1.5rem;
-  border-bottom: 1px solid ${({ theme }) => theme.color.border};
+  border-bottom: 1px solid ${({ theme }) => theme.primary.color.border};
   align-items: center;
   gap: 1rem;
 

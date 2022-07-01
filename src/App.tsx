@@ -23,7 +23,7 @@ import {
   DollarIcon,
   SettingsIcon,
 } from '~/icons';
-import { ReportsPage } from '~/pages/ReportsPage';
+import { ReportsPage, VendorsList } from '~/pages';
 
 import lightTheme from '~/themes/light';
 import { PAGES } from '~/constants';
@@ -88,6 +88,7 @@ const App = () => {
 
           <Routes>
             <Route path="reports" element={<ReportsPage />} />
+            <Route path="vendors-list" element={<VendorsList />} />
           </Routes>
         </Main>
       </Container>

@@ -5,7 +5,7 @@ import { Avatar } from '~/components/Avatar';
 import TopBarStyled from '~/components/TopBar/TopBar.styled';
 
 const SearchStyled = styled.input`
-  border: 1px solid ${({ theme }) => theme.color.border};
+  border: 1px solid ${({ theme }) => theme.primary.color.border};
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
 `;

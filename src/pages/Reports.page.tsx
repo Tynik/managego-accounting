@@ -13,7 +13,7 @@ import {
   TableCell,
 } from '~/components';
 
-export const ReportsPage = () => {
+const ReportsPage = () => {
   return (
     <>
       <ActionPanel>
@@ -29,7 +29,9 @@ export const ReportsPage = () => {
           </ActionPanelFilter>
         </ActionPanelContent>
         <ActionPanelActions>
-          <Button>Export</Button>
+          <Button size="small" variant="outlined">
+            Export
+          </Button>
         </ActionPanelActions>
       </ActionPanel>
 
@@ -114,3 +116,5 @@ export const ReportsPage = () => {
     </>
   );
 };
+
+export default ReportsPage;

@@ -11,7 +11,7 @@ const TableBodyStyled = styled.tbody`
       left: 0.25rem;
       right: 0.25rem;
       height: 1px;
-      background-color: ${({ theme }) => theme.color.border};
+      background-color: ${({ theme }) => theme.primary.color.border};
     }
   }
 `;

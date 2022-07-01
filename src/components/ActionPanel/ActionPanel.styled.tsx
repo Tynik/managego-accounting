@@ -5,8 +5,8 @@ const ActionPanelStyled = styled.div`
   gap: 1rem;
   padding: 0.5rem 1.5rem;
   align-items: center;
-  border-bottom: 1px solid ${({ theme }) => theme.color.border};
-  background-color: ${({ theme }) => theme.color.panel};
+  border-bottom: 1px solid ${({ theme }) => theme.primary.color.border};
+  background-color: ${({ theme }) => theme.primary.color.panel};
 `;
 
 export default ActionPanelStyled;

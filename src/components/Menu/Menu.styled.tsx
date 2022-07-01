@@ -8,8 +8,8 @@ const MAX_MENU_WIDTH = '16.875rem';
 const MenuStyled = styled.nav<{ isOpened: boolean }>`
   height: 100vh;
   width: ${({ isOpened }) => (isOpened ? MAX_MENU_WIDTH : 'calc(0.5rem + 0.75rem * 2 + 2.25rem)')};
-  color: ${({ theme }) => theme.color.text};
-  background: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.primary.color.text};
+  background: ${({ theme }) => theme.primary.color.primary};
   transition: width 0.3s ease-in-out;
   display: flex;
   flex-direction: column;

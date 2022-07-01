@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from 'react';
 
-import ButtonStyled from './Button.styled';
+import ButtonStyled, { ButtonStyledProps } from './Button.styled';
 
-const Button = ({ children }: PropsWithChildren) => {
-  return <ButtonStyled>{children}</ButtonStyled>;
+const Button = ({ children, ...props }: PropsWithChildren<ButtonStyledProps>) => {
+  return <ButtonStyled {...props}>{children}</ButtonStyled>;
 };
 
 export default Button;
