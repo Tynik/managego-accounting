@@ -1,12 +1,16 @@
 import React from 'react';
+
 import {
   Button,
   ActionPanel,
   ActionPanelActions,
   ActionPanelContent,
   ActionPanelFilter,
-  Content,
+  SidebarWrapper,
+  SidebarContent,
+  Sidebar,
 } from '~/components';
+import VendorsListContent from '~/pages/VendorsListContent';
 
 const VendorsListPage = () => {
   return (
@@ -24,9 +28,13 @@ const VendorsListPage = () => {
         </ActionPanelActions>
       </ActionPanel>
 
-      <Content>
-        <Button>Add Vendor</Button>
-      </Content>
+      <SidebarWrapper>
+        <SidebarContent>
+          <VendorsListContent />
+        </SidebarContent>
+
+        <Sidebar>Test</Sidebar>
+      </SidebarWrapper>
     </>
   );
 };

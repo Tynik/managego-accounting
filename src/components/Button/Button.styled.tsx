@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -12,7 +13,7 @@ export type ButtonStyledProps = {
   color?: 'primary' | 'secondary';
   variant?: 'filled' | 'outlined';
   disabled?: boolean;
-};
+} & ButtonHTMLAttributes<any>;
 
 const ButtonStyled = styled.button<ButtonStyledProps>`
   width: ${({ size }) => sizes[size || 'medium']};
