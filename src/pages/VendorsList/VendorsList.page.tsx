@@ -9,8 +9,12 @@ import {
   SidebarWrapper,
   SidebarPageContent,
   Sidebar,
+  Form,
+  TextInput,
+  FormButtons,
 } from '~/components';
 import { VendorsListContent } from '~/pages';
+import Checkbox from '~/components/Form/Checkbox/Checkbox';
 
 const VendorsListPage = () => {
   return (
@@ -33,7 +37,23 @@ const VendorsListPage = () => {
           <VendorsListContent />
         </SidebarPageContent>
 
-        <Sidebar title="Add Vendor" />
+        <Sidebar title="Add Vendor">
+          <Form title="Vendor Setup">
+            <TextInput placeholder="Vendor Name" />
+
+            <TextInput placeholder="Vendor Address" />
+
+            <TextInput placeholder="Select Term (!!! Select)" />
+
+            <Checkbox label="Split balances between Residents" />
+
+            <FormButtons>
+              <Button color="info" variant="outlined" size="large">
+                Connect Vendor
+              </Button>
+            </FormButtons>
+          </Form>
+        </Sidebar>
       </SidebarWrapper>
     </>
   );

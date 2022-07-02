@@ -2,6 +2,8 @@ import { ButtonHTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
+import type { ButtonColor, ButtonVariant } from '~/emotion';
+
 const sizes: Record<ButtonStyledProps['size'], string> = {
   small: '5.625rem',
   medium: '9.188rem',
@@ -10,40 +12,50 @@ const sizes: Record<ButtonStyledProps['size'], string> = {
 
 export type ButtonStyledProps = {
   size?: 'small' | 'medium' | 'large';
-  color?: 'primary' | 'secondary';
-  variant?: 'filled' | 'outlined';
+  color?: ButtonColor;
+  variant?: ButtonVariant;
   disabled?: boolean;
 } & ButtonHTMLAttributes<any>;
 
 const ButtonStyled = styled.button<ButtonStyledProps>`
   width: ${({ size }) => sizes[size || 'medium']};
   padding: 0.5rem;
-  font-weight: 500;
-  font-size: 0.875rem;
+
   border-radius: 0.25rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 
-  ${({ theme, disabled = false, variant = 'filled', color = 'primary' }) =>
+  ${({ variant }) =>
+    variant === 'text'
+      ? css`
+          font-weight: 400;
+          font-size: 0.75rem;
+        `
+      : css`
+          font-weight: 500;
+          font-size: 0.875rem;
+        `}
+
+  ${({ theme, disabled = false, variant = 'filled', color = 'success' }) =>
     css`
-      ${theme[color].button[variant].borderColor
+      ${theme.button[color][variant].borderColor
         ? css`
             border: 1px solid
-              ${(disabled && theme[color].button[variant].disabled?.borderColor) ||
-              theme[color].button[variant].borderColor};
+              ${(disabled && theme.button[color][variant].disabled?.borderColor) ||
+              theme.button[color][variant].borderColor};
           `
         : css`
             border: none;
           `};
 
       color: ${disabled
-        ? theme[color].button[variant].disabled.color
-        : theme[color].button[variant].color};
+        ? theme.button[color][variant].disabled.color
+        : theme.button[color][variant].color};
 
-      background-color: ${disabled
-        ? theme[color].button[variant].disabled.backgroundColor
-        : theme[color].button[variant].backgroundColor};
+      background-color: ${(disabled
+        ? theme.button[color][variant].disabled.backgroundColor
+        : theme.button[color][variant].backgroundColor) || 'transparent'};
 
       transition: background-color 0.3s ease-out;
 
@@ -57,10 +69,16 @@ const ButtonStyled = styled.button<ButtonStyledProps>`
         cursor: pointer;
 
         &:hover {
-          background-color: ${theme[color].button[variant].hover.backgroundColor};
+          background-color: ${theme.button[color][variant].hover?.backgroundColor || 'transparent'};
         }
         &:active {
-          background-color: ${theme[color].button[variant].active.backgroundColor};
+          ${theme.button[color][variant].active?.borderColor &&
+          css`
+            border-color: ${theme.button[color][variant].active.borderColor};
+          `};
+
+          background-color: ${theme.button[color][variant].active?.backgroundColor ||
+          'transparent'};
         }
       `}
     `}

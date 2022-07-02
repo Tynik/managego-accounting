@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import { Button, SidebarContext } from '~/components';
+import { Button, SidebarWrapperContext } from '~/components';
 
 const VendorsListContent = () => {
-  const { toggleSidebar } = useContext(SidebarContext);
+  const { toggleSidebar } = useContext(SidebarWrapperContext);
 
   return (
     <>

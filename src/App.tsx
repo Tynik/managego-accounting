@@ -23,7 +23,7 @@ import {
   DollarIcon,
   SettingsIcon,
 } from '~/icons';
-import { ReportsPage, VendorsList } from '~/pages';
+import { DashboardPage, ReportsPage, VendorsList } from '~/pages';
 
 import lightTheme from '~/themes/light';
 import { PAGES } from '~/constants';
@@ -38,7 +38,7 @@ const App = () => {
       <Container>
         <Menu title="Accounting">
           <MenuItems>
-            <MenuItem icon={<DashboardIcon />} label="Dashboard">
+            <MenuItem onClick={() => navigate('/')} icon={<DashboardIcon />} label="Dashboard">
               <MenuSubItem label="Property Management" icon={<BuildingIcon />}>
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
                 <h6 onClick={() => navigate('/residents')}>Residents</h6>
@@ -87,6 +87,7 @@ const App = () => {
           <TopBar title={PAGES[location.pathname]?.title} />
 
           <Routes>
+            <Route path="/" element={<DashboardPage />} />
             <Route path="reports" element={<ReportsPage />} />
             <Route path="vendors-list" element={<VendorsList />} />
           </Routes>

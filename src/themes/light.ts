@@ -6,7 +6,9 @@ export default {
       panel: '#F8F8F8',
       text: '#FFF',
     },
-    button: {
+  },
+  button: {
+    success: {
       filled: {
         color: '#fff',
         backgroundColor: '#5ea3a3',
@@ -24,7 +26,6 @@ export default {
       outlined: {
         color: '#5ea3a3',
         borderColor: '#5ea3a3',
-        backgroundColor: '#fff',
         hover: {
           backgroundColor: '#c9eae2',
         },
@@ -34,23 +35,30 @@ export default {
         disabled: {
           color: '#e8e8e8',
           borderColor: '#e8e8e8',
-          backgroundColor: '#fff',
+        },
+      },
+      text: {
+        color: '#5ea3a3',
+        active: {
+          backgroundColor: 'rgba(173, 223, 211, 0.3)',
+        },
+        disabled: {
+          color: '#e8e8e8',
+        },
+      },
+      cancel: {
+        color: '#939598',
+        borderColor: '#f1f1f1',
+        active: {
+          borderColor: '#dbdbdb',
+          backgroundColor: '#dbdbdb',
         },
       },
     },
-  },
-  secondary: {
-    color: {},
-    button: {
+    info: {
       filled: {
         color: '#fff',
         backgroundColor: '#7b61ff',
-        hover: {
-          backgroundColor: 'none',
-        },
-        active: {
-          backgroundColor: 'none',
-        },
         disabled: {
           color: '#e8e8e8',
           backgroundColor: '#f1f1f1',
@@ -59,17 +67,43 @@ export default {
       outlined: {
         color: '#7b61ff',
         borderColor: '#7b61ff',
-        backgroundColor: '#fff',
-        hover: {
-          backgroundColor: 'none',
+        disabled: {
+          color: '#e8e8e8',
+          borderColor: '#e8e8e8',
         },
+      },
+      text: {
+        color: '#7b61ff',
         active: {
-          backgroundColor: 'none',
+          backgroundColor: '#ece8ff',
         },
         disabled: {
           color: '#e8e8e8',
           borderColor: '#e8e8e8',
-          backgroundColor: '#fff',
+        },
+      },
+    },
+    error: {
+      text: {
+        color: '#e53935',
+        active: {
+          backgroundColor: '#fcebea',
+        },
+        disabled: {
+          color: '#e8e8e8',
+          borderColor: '#e8e8e8',
+        },
+      },
+    },
+    default: {
+      text: {
+        color: '#274a5d',
+        active: {
+          backgroundColor: '#dff2fc',
+        },
+        disabled: {
+          color: '#e8e8e8',
+          borderColor: '#e8e8e8',
         },
       },
     },

@@ -1,6 +1,6 @@
-import React, { PropsWithChildren, useContext } from 'react';
+import React, { PropsWithChildren, useContext, useRef } from 'react';
 
-import { Button, SidebarActions, SidebarContext } from '~/components';
+import { Button, SidebarActions, SidebarWrapperContext } from '~/components';
 
 import SidebarStyled from './Sidebar.styled';
 
@@ -9,17 +9,17 @@ type SidebarProps = {
 };
 
 const Sidebar = ({ children, title }: PropsWithChildren<SidebarProps>) => {
-  const { isSidebarOpened, closeSidebar } = useContext(SidebarContext);
+  const { isSidebarOpened, setSidebarRef, closeSidebar } = useContext(SidebarWrapperContext);
 
   return (
-    <SidebarStyled isSidebarOpened={isSidebarOpened}>
+    <SidebarStyled ref={setSidebarRef} isSidebarOpened={isSidebarOpened}>
       <h2>{title}</h2>
 
       <div className="content">{children}</div>
 
       <SidebarActions>
         <Button size="small">Save</Button>
-        <Button onClick={closeSidebar} variant="outlined" size="small">
+        <Button onClick={closeSidebar} variant="cancel" size="small">
           Cancel
         </Button>
       </SidebarActions>

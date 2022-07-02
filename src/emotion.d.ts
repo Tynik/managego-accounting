@@ -1,25 +1,30 @@
 import '@emotion/react';
 
-type ButtonVariant = 'filled' | 'outlined';
+export type ButtonColor = 'success' | 'info' | 'error' | 'default';
+
+export type ButtonVariant = 'filled' | 'outlined' | 'text' | 'cancel';
 
 type ButtonModifiers = {
   color: string;
   borderColor?: string;
-  backgroundColor: string;
-  hover: {
+  backgroundColor?: string;
+  hover?: {
     backgroundColor: string;
   };
-  active: {
+  active?: {
     backgroundColor: string;
+    borderColor?: string;
   };
-  disabled: {
+  disabled?: {
     color: string;
     borderColor?: string;
-    backgroundColor: string;
+    backgroundColor?: string;
   };
 };
 
 type Button = Record<ButtonVariant, ButtonModifiers>;
+
+type Buttons = Record<ButtonColor, Partial<Button>>;
 
 declare module '@emotion/react' {
   export interface Theme {
@@ -30,11 +35,8 @@ declare module '@emotion/react' {
         border: string;
         panel: string;
       };
-      button: Button;
     };
-    secondary: {
-      button: Button;
-    };
+    button: Buttons;
     actionPanel: {
       shadowColor: string;
     };

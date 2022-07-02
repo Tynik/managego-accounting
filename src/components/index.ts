@@ -11,3 +11,4 @@ export * from './Button';
 export * from './IconButton';
 export * from './Table';
 export * from './Sidebar';
+export * from './Form';
