@@ -9,10 +9,10 @@ const MenuTitleStyled = styled.div<MenuTitleStyledProps>`
   align-items: center;
   overflow: hidden;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.25rem;
 
   > .icon {
     flex-shrink: 0;
+    margin-left: 0.625rem;
     display: ${({ isOpened }) => (isOpened ? 'inherit' : 'none')};
   }
 
@@ -28,6 +28,7 @@ const MenuTitleStyled = styled.div<MenuTitleStyledProps>`
       overflow: hidden;
       font-weight: 600;
       font-size: 1.125rem;
+      color: #fff;
       opacity: ${({ isOpened }) => (isOpened ? 1 : 0)};
       transition: opacity 0.3s linear;
       margin-left: ${({ isOpened }) => (isOpened ? '0.5rem' : 0)};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@emotion/react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate, Link } from 'react-router-dom';
 
 import GlobalStyles from '~/GlobalStyles';
 import {
@@ -38,40 +38,50 @@ const App = () => {
       <Container>
         <Menu title="Accounting">
           <MenuItems>
-            <MenuItem onClick={() => navigate('/')} icon={<DashboardIcon />} label="Dashboard">
+            <MenuItem
+              component={<Link to="/" />}
+              active={location.pathname === '/'}
+              icon={<DashboardIcon />}
+              label="Dashboard"
+            >
               <MenuSubItem label="Property Management" icon={<BuildingIcon />}>
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
                 <h6 onClick={() => navigate('/residents')}>Residents</h6>
                 <h6>Transactions</h6>
                 <h6>Entity/Buildings</h6>
               </MenuSubItem>
+
               <MenuSubItem label="Vendors/AP" icon={<StorageIcon />}>
-                <h6>Vendors List</h6>
+                <h6 onClick={() => navigate('/vendors-list')}>Vendors List</h6>
                 <h6>Pay Bills</h6>
                 <h6>Payroll</h6>
               </MenuSubItem>
+
               <MenuSubItem
                 label="Banking/Accounting"
                 icon={<BankIcon />}
-                onClick={() => navigate('/banking')}
+                component={<Link to="/banking" />}
                 active={location.pathname === '/banking'}
               />
+
               <MenuSubItem
                 label="Reports"
                 icon={<ReportsIcon />}
-                onClick={() => navigate('/reports')}
+                component={<Link to="/reports" />}
                 active={location.pathname === '/reports'}
               />
+
               <MenuSubItem
                 label="Ledger"
                 icon={<DollarIcon />}
-                onClick={() => navigate('/ledger')}
+                component={<Link to="/ledger" />}
                 active={location.pathname === '/ledger'}
               />
+
               <MenuSubItem
                 label="Setup"
                 icon={<SettingsIcon />}
-                onClick={() => navigate('/setup')}
+                component={<Link to="/setup" />}
                 active={location.pathname === '/setup'}
               />
             </MenuItem>

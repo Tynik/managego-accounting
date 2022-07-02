@@ -9,10 +9,10 @@ type SidebarProps = {
 };
 
 const Sidebar = ({ children, title }: PropsWithChildren<SidebarProps>) => {
-  const { isSidebarOpened, setSidebarRef, closeSidebar } = useContext(SidebarWrapperContext);
+  const { isSidebarOpened, closeSidebar } = useContext(SidebarWrapperContext);
 
   return (
-    <SidebarStyled ref={setSidebarRef} isSidebarOpened={isSidebarOpened}>
+    <SidebarStyled isSidebarOpened={isSidebarOpened}>
       <h2>{title}</h2>
 
       <div className="content">{children}</div>

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 import { maxScreen } from '~/helpers';
 
@@ -8,7 +7,6 @@ const MAX_MENU_WIDTH = '16.875rem';
 const MenuStyled = styled.nav<{ isOpened: boolean }>`
   height: 100vh;
   width: ${({ isOpened }) => (isOpened ? MAX_MENU_WIDTH : 'calc(0.5rem + 0.75rem * 2 + 2.25rem)')};
-  color: ${({ theme }) => theme.primary.color.text};
   background: ${({ theme }) => theme.primary.color.primary};
   transition: width 0.3s ease-in-out;
   display: flex;
@@ -23,16 +21,12 @@ const MenuStyled = styled.nav<{ isOpened: boolean }>`
   }
 
   @media (${maxScreen.xs}) {
+    transform: ${({ isOpened }) => (isOpened ? '0' : 'translateX(-100%)')};
+    transition: transform 0.3s ease-in-out;
     position: absolute;
     z-index: 999;
     left: 0;
     right: 0;
-
-    ${({ isOpened }) =>
-      isOpened &&
-      css`
-        width: 100%;
-      `};
   }
 `;
 

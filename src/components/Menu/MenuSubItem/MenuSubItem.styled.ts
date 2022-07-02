@@ -12,23 +12,30 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
   > .item {
     display: flex;
     align-items: center;
-    margin: 0.625rem 0.25rem 0;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.625rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    color: #e8e8e8;
+
+    &:hover {
+      background-color: #ece8ff;
+      color: #7b61ff;
+
+      > .arrow svg path {
+        fill: #7b61ff;
+      }
+    }
+
+    &:active {
+      background-color: #cabfff;
+    }
 
     ${({ active }) =>
       active &&
       css`
         color: #7b61ff;
-        background-color: #ece8ff;
-      `};
-
-    ${({ active }) =>
-      !active &&
-      css`
-        &:hover {
-          background-color: #3e7694;
-        }
+        background-color: #cabfff;
       `};
 
     > .arrow {
@@ -40,7 +47,6 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
     > .name {
       display: flex;
       align-items: center;
-      padding: 0.5rem 0.25rem;
 
       > .icon {
         background-color: white;
@@ -52,13 +58,16 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
         opacity: ${({ isMenuOpened }) => (isMenuOpened ? 1 : 0)};
         transition: opacity 0.3s linear;
         white-space: nowrap;
+        font-size: 0.875rem;
+        font-weight: 400;
       }
     }
   }
 
-  .list {
+  > .list {
+    flex-direction: column;
     margin-left: 2.25rem;
-    display: ${({ isMenuOpened }) => (isMenuOpened ? 'inherit' : 'none')};
+    display: ${({ isMenuOpened }) => (isMenuOpened ? 'flex' : 'none')};
     opacity: ${({ isSubItemOpened }) => (isSubItemOpened ? 1 : 0)};
 
     > * {
@@ -72,9 +81,15 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
       margin: ${({ isSubItemOpened }) => (isSubItemOpened ? '0 0 0.25rem 0' : 0)};
       transition: font-size 0.25s, opacity 0.26s ease;
       font-weight: 400;
+      color: #e8e8e8;
 
       &:hover {
-        background-color: #3e7694;
+        background-color: #ece8ff;
+        color: #7b61ff;
+      }
+
+      &:active {
+        background-color: #cabfff;
       }
     }
   }

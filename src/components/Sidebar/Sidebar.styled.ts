@@ -15,6 +15,7 @@ const SidebarStyled = styled.aside<SidebarStyledProps>`
   padding: 2.25rem 1.875rem 1rem;
   display: flex;
   flex-direction: column;
+  border-left: 1px solid #e8e8e8;
 
   > h2 {
     font-size: 1.5rem;
