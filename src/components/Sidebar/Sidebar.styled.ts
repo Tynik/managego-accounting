@@ -13,9 +13,21 @@ const SidebarStyled = styled.aside<SidebarStyledProps>`
   position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+  bottom: 0;
   background-color: #f9f8ff;
-  padding: 2.25rem 1.875rem;
+  padding: 2.25rem 1.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  > h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4a5354;
+  }
+
+  > .content {
+    flex-grow: 1;
+  }
 `;
 
 export default SidebarStyled;

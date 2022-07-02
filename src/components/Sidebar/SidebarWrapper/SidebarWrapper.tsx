@@ -1,34 +1,40 @@
 import React, { createContext, PropsWithChildren, useMemo, useState } from 'react';
 
-import SidebarWrapperStyled from '~/components/Sidebar/SidebarWrapper.styled';
+import { useScreenView } from '~/hooks';
+
+import SidebarWrapperStyled from './SidebarWrapper.styled';
 
 type SidebarContextProps = {
   isSidebarOpened: boolean;
-  onToggleSidebar: () => void;
-  onCloseSidebar: () => void;
+  toggleSidebar: () => void;
+  closeSidebar: () => void;
 };
 
 export const SidebarContext = createContext<SidebarContextProps>({
-  isSidebarOpened: false,
-  onToggleSidebar: () => {},
-  onCloseSidebar: () => {},
+  isSidebarOpened: null,
+  toggleSidebar: () => {},
+  closeSidebar: () => {},
 });
 
 const SidebarWrapper = ({ children, ...props }: PropsWithChildren<any>) => {
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(true);
+
+  const contentRef = useScreenView();
 
   const contextValue = useMemo(
     () => ({
       isSidebarOpened: isOpened,
-      onToggleSidebar: () => setIsOpened(!isOpened),
-      onCloseSidebar: () => setIsOpened(false),
+      toggleSidebar: () => setIsOpened(!isOpened),
+      closeSidebar: () => setIsOpened(false),
     }),
     [isOpened]
   );
 
   return (
     <SidebarContext.Provider value={contextValue}>
-      <SidebarWrapperStyled {...props}>{children}</SidebarWrapperStyled>
+      <SidebarWrapperStyled ref={contentRef} {...props}>
+        {children}
+      </SidebarWrapperStyled>
     </SidebarContext.Provider>
   );
 };

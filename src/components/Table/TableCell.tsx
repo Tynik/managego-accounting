@@ -1,7 +1,10 @@
 import React, { HTMLAttributes, PropsWithChildren, useContext } from 'react';
 
-import TableCellStyled, { TableCellStyledProps } from '~/components/Table/TableCell.styled';
 import { TableHeadContext } from '~/components/Table/TableHead';
+
+import type { TableCellStyledProps } from './TableCell.styled';
+
+import TableCellStyled from './TableCell.styled';
 
 type TableCellProps = TableCellStyledProps & HTMLAttributes<any>;
 

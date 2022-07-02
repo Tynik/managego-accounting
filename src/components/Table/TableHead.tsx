@@ -1,6 +1,6 @@
 import React, { createContext, HTMLAttributes, PropsWithChildren } from 'react';
 
-import TableHeadStyled from '~/components/Table/TableHead.styled';
+import TableHeadStyled from './TableHead.styled';
 
 export const TableHeadContext = createContext(false);
 

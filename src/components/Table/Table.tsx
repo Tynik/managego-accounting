@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 
-import TableStyled from '~/components/Table/Table.styled';
+import TableStyled from './Table.styled';
 
 const TableWrap = styled.div`
   width: 100%;

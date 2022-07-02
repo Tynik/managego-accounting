@@ -7,10 +7,10 @@ import {
   ActionPanelContent,
   ActionPanelFilter,
   SidebarWrapper,
-  SidebarContent,
+  SidebarPageContent,
   Sidebar,
 } from '~/components';
-import VendorsListContent from '~/pages/VendorsListContent';
+import { VendorsListContent } from '~/pages';
 
 const VendorsListPage = () => {
   return (
@@ -29,11 +29,11 @@ const VendorsListPage = () => {
       </ActionPanel>
 
       <SidebarWrapper>
-        <SidebarContent>
+        <SidebarPageContent>
           <VendorsListContent />
-        </SidebarContent>
+        </SidebarPageContent>
 
-        <Sidebar>Test</Sidebar>
+        <Sidebar title="Add Vendor" />
       </SidebarWrapper>
     </>
   );

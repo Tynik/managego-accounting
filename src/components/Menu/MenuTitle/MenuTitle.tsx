@@ -1,6 +1,7 @@
 import React, { HTMLAttributes, PropsWithChildren, ReactElement, useContext } from 'react';
 
 import { MenuContext } from '~/components/Menu/Menu';
+
 import MenuTitleStyled, { MenuTitleStyledProps } from './MenuTitle.styled';
 
 type MenuTitleProps = {

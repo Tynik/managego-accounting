@@ -1,7 +1,8 @@
 import React, { PropsWithChildren, useContext } from 'react';
 
 import { MenuContext } from '~/components/Menu/Menu';
-import MenuFooterStyled from '~/components/Menu/MenuFooter/MenuFooter.styled';
+
+import MenuFooterStyled from './MenuFooter.styled';
 
 const MenuFooter = ({ children, ...props }: PropsWithChildren<any>) => {
   const { isMenuOpened } = useContext(MenuContext);

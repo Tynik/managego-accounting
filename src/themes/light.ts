@@ -74,4 +74,7 @@ export default {
       },
     },
   },
+  actionPanel: {
+    shadowColor: '#00000014',
+  },
 };

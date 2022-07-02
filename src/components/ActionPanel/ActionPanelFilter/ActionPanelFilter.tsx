@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, PropsWithChildren } from 'react';
 
-import ActionPanelFilterStyled from '~/components/ActionPanel/ActionPanelFilter/ActionPanelFilter.styled';
+import ActionPanelFilterStyled from './ActionPanelFilter.styled';
 
 type ActionPanelFilterProps = { label: string } & HTMLAttributes<any>;
 
@@ -13,7 +13,7 @@ const ActionPanelFilter = ({
     <ActionPanelFilterStyled {...props}>
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label>{label}</label>
-      <div className="s">{children}</div>
+      <div className="">{children}</div>
     </ActionPanelFilterStyled>
   );
 };

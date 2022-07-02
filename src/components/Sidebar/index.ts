@@ -1,3 +1,6 @@
 export { default as Sidebar } from './Sidebar';
-export { default as SidebarWrapper } from './SidebarWrapper';
-export { default as SidebarContent } from './SidebarContent';
+export { default as SidebarPageContent } from './SidebarPageContent';
+
+export * from './Sidebar.styled';
+export * from './SidebarWrapper';
+export * from './SidebarActions';

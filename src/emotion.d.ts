@@ -35,5 +35,8 @@ declare module '@emotion/react' {
     secondary: {
       button: Button;
     };
+    actionPanel: {
+      shadowColor: string;
+    };
   }
 }
