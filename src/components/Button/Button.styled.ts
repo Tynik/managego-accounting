@@ -15,7 +15,7 @@ export type ButtonStyledProps = {
   color?: ButtonColor;
   variant?: ButtonVariant;
   disabled?: boolean;
-} & ButtonHTMLAttributes<any>;
+} & ButtonHTMLAttributes<never>;
 
 const ButtonStyled = styled.button<ButtonStyledProps>`
   width: ${({ size }) => sizes[size || 'medium']};

@@ -1,8 +1,12 @@
-import React, { PropsWithChildren } from 'react';
+import React, { InputHTMLAttributes, PropsWithChildren } from 'react';
 
 import CheckboxStyled from './Checkbox.styled';
 
-const Checkbox = ({ children, label, ...props }: PropsWithChildren<any>) => {
+type CheckboxProps = {
+  label: string;
+} & InputHTMLAttributes<never>;
+
+const Checkbox = ({ children, label, ...props }: PropsWithChildren<CheckboxProps>) => {
   return (
     <CheckboxStyled {...props}>
       <input type="checkbox" />

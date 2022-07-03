@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 
 import { SolidArrowIcon } from '~/icons';
-import { MenuContext } from '~/components/Menu/Menu';
+import { MenuContext } from '~/components/Menu';
 
 import MenuSubItemStyled from './MenuSubItem.styled';
 
@@ -18,7 +18,7 @@ type MenuSubItemProps = {
   label: string;
   component?: ReactElement;
   active?: boolean;
-} & HTMLAttributes<any>;
+} & HTMLAttributes<never>;
 
 const MenuSubItem = ({
   children,

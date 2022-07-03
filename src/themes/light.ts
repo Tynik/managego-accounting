@@ -5,6 +5,7 @@ export default {
       border: '#E8E8E8',
       panel: '#F8F8F8',
       text: '#FFF',
+      shadow: '#00000014',
     },
   },
   button: {
@@ -108,7 +109,5 @@ export default {
       },
     },
   },
-  actionPanel: {
-    shadowColor: '#00000014',
-  },
+  actionPanel: {},
 };

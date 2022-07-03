@@ -1,10 +1,10 @@
-import React, { PropsWithChildren } from 'react';
+import React, { FormHTMLAttributes, PropsWithChildren } from 'react';
 
 import FormStyled from './Form.styled';
 
 type FormProps = {
   title?: string;
-};
+} & FormHTMLAttributes<never>;
 
 const Form = ({ children, title, ...props }: PropsWithChildren<FormProps>) => {
   return (

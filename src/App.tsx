@@ -13,6 +13,7 @@ import {
   MenuSubItem,
   MenuFooter,
   ManageGoLogo,
+  MenuWrapper,
 } from '~/components';
 import {
   DashboardIcon,
@@ -36,72 +37,74 @@ const App = () => {
     <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
       <Container>
-        <Menu title="Accounting">
-          <MenuItems>
-            <MenuItem
-              component={<Link to="/" />}
-              active={location.pathname === '/'}
-              icon={<DashboardIcon />}
-              label="Dashboard"
-            >
-              <MenuSubItem label="Property Management" icon={<BuildingIcon />}>
-                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-                <h6 onClick={() => navigate('/residents')}>Residents</h6>
-                <h6>Transactions</h6>
-                <h6>Entity/Buildings</h6>
-              </MenuSubItem>
+        <MenuWrapper>
+          <Menu title="Accounting">
+            <MenuItems>
+              <MenuItem
+                component={<Link to="/" />}
+                active={location.pathname === '/'}
+                icon={<DashboardIcon />}
+                label="Dashboard"
+              >
+                <MenuSubItem label="Property Management" icon={<BuildingIcon />}>
+                  {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+                  <h6 onClick={() => navigate('/residents')}>Residents</h6>
+                  <h6>Transactions</h6>
+                  <h6>Entity/Buildings</h6>
+                </MenuSubItem>
 
-              <MenuSubItem label="Vendors/AP" icon={<StorageIcon />}>
-                <h6 onClick={() => navigate('/vendors-list')}>Vendors List</h6>
-                <h6>Pay Bills</h6>
-                <h6>Payroll</h6>
-              </MenuSubItem>
+                <MenuSubItem label="Vendors/AP" icon={<StorageIcon />}>
+                  <h6 onClick={() => navigate('/vendors-list')}>Vendors List</h6>
+                  <h6>Pay Bills</h6>
+                  <h6>Payroll</h6>
+                </MenuSubItem>
 
-              <MenuSubItem
-                label="Banking/Accounting"
-                icon={<BankIcon />}
-                component={<Link to="/banking" />}
-                active={location.pathname === '/banking'}
-              />
+                <MenuSubItem
+                  label="Banking/Accounting"
+                  icon={<BankIcon />}
+                  component={<Link to="/banking" />}
+                  active={location.pathname === '/banking'}
+                />
 
-              <MenuSubItem
-                label="Reports"
-                icon={<ReportsIcon />}
-                component={<Link to="/reports" />}
-                active={location.pathname === '/reports'}
-              />
+                <MenuSubItem
+                  label="Reports"
+                  icon={<ReportsIcon />}
+                  component={<Link to="/reports" />}
+                  active={location.pathname === '/reports'}
+                />
 
-              <MenuSubItem
-                label="Ledger"
-                icon={<DollarIcon />}
-                component={<Link to="/ledger" />}
-                active={location.pathname === '/ledger'}
-              />
+                <MenuSubItem
+                  label="Ledger"
+                  icon={<DollarIcon />}
+                  component={<Link to="/ledger" />}
+                  active={location.pathname === '/ledger'}
+                />
 
-              <MenuSubItem
-                label="Setup"
-                icon={<SettingsIcon />}
-                component={<Link to="/setup" />}
-                active={location.pathname === '/setup'}
-              />
-            </MenuItem>
-          </MenuItems>
+                <MenuSubItem
+                  label="Setup"
+                  icon={<SettingsIcon />}
+                  component={<Link to="/setup" />}
+                  active={location.pathname === '/setup'}
+                />
+              </MenuItem>
+            </MenuItems>
 
-          <MenuFooter>
-            <span>powered by</span>
-            <ManageGoLogo />
-          </MenuFooter>
-        </Menu>
+            <MenuFooter>
+              <span>powered by</span>
+              <ManageGoLogo />
+            </MenuFooter>
+          </Menu>
 
-        <Main>
-          <TopBar title={PAGES[location.pathname]?.title} />
+          <Main>
+            <TopBar title={PAGES[location.pathname]?.title} />
 
-          <Routes>
-            <Route path="/" element={<DashboardPage />} />
-            <Route path="reports" element={<ReportsPage />} />
-            <Route path="vendors-list" element={<VendorsList />} />
-          </Routes>
-        </Main>
+            <Routes>
+              <Route path="/" element={<DashboardPage />} />
+              <Route path="reports" element={<ReportsPage />} />
+              <Route path="vendors-list" element={<VendorsList />} />
+            </Routes>
+          </Main>
+        </MenuWrapper>
       </Container>
     </ThemeProvider>
   );

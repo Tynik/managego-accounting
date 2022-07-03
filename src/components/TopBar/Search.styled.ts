@@ -7,7 +7,7 @@ const SearchStyled = styled.input`
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
 
-  @media (${maxScreen.md}) {
+  @media (${maxScreen.sm}) {
     display: none;
   }
 `;

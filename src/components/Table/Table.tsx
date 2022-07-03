@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, TableHTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 
 import TableStyled from './Table.styled';
@@ -8,7 +8,7 @@ const TableWrap = styled.div`
   overflow-x: auto;
 `;
 
-const Table = ({ children, ...props }: PropsWithChildren<any>) => {
+const Table = ({ children, ...props }: PropsWithChildren<TableHTMLAttributes<never>>) => {
   return (
     <TableWrap>
       <TableStyled {...props}>{children}</TableStyled>

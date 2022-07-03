@@ -14,6 +14,16 @@ const MenuTitleStyled = styled.div<MenuTitleStyledProps>`
     flex-shrink: 0;
     margin-left: 0.625rem;
     display: ${({ isOpened }) => (isOpened ? 'inherit' : 'none')};
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3e7694;
+      border-radius: 1.5rem;
+
+      svg path {
+        fill: #5ea3a3;
+      }
+    }
   }
 
   > .content {

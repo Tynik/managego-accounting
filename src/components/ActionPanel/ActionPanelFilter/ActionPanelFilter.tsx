@@ -2,7 +2,7 @@ import React, { HTMLAttributes, PropsWithChildren } from 'react';
 
 import ActionPanelFilterStyled from './ActionPanelFilter.styled';
 
-type ActionPanelFilterProps = { label: string } & HTMLAttributes<any>;
+type ActionPanelFilterProps = { label: string } & HTMLAttributes<never>;
 
 const ActionPanelFilter = ({
   children,

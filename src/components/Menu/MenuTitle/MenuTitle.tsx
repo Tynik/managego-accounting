@@ -1,13 +1,13 @@
 import React, { HTMLAttributes, PropsWithChildren, ReactElement, useContext } from 'react';
 
-import { MenuContext } from '~/components/Menu/Menu';
+import { MenuContext } from '~/components/Menu';
 
 import MenuTitleStyled, { MenuTitleStyledProps } from './MenuTitle.styled';
 
 type MenuTitleProps = {
   icon: ReactElement;
 } & Partial<MenuTitleStyledProps> &
-  HTMLAttributes<any>;
+  HTMLAttributes<never>;
 
 const MenuTitle = ({ children, icon, ...props }: PropsWithChildren<MenuTitleProps>) => {
   const { isMenuOpened } = useContext(MenuContext);

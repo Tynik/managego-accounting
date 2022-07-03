@@ -1,13 +1,20 @@
 import styled from '@emotion/styled';
 
-const IconButtonStyled = styled.div`
+type IconButtonStyledProps = {
+  backgroundColor: string;
+};
+
+const IconButtonStyled = styled.div<IconButtonStyledProps>`
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+
   &:hover {
-    background-color: #3e7694;
+    background-color: ${({ backgroundColor }) => backgroundColor};
   }
+
   &:active {
-    stroke: #488b8f;
+    fill: #488b8f;
     background-color: #c9eae2;
   }
 `;

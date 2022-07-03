@@ -9,3 +9,4 @@ export { default as ReportsIcon } from './ReportsIcon';
 export { default as DollarIcon } from './DollarIcon';
 export { default as SettingsIcon } from './SettingsIcon';
 export { default as SearchIcon } from './SearchIcon';
+export { default as BurgerMenu } from './BurgerMenuIcon';

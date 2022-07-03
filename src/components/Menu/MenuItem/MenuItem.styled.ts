@@ -37,14 +37,14 @@ const MenuItemStyled = styled.div<MenuItemStyledProps>`
         background-color: #cabfff;
 
         > .icon svg path {
-          fill: #7b61ff;
+          fill: #7b61ff !important;
         }
       `};
 
     > .icon {
       flex-shrink: 0;
 
-      path {
+      svg path {
         fill: #add2c9;
       }
     }

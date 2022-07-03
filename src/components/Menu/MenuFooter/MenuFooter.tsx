@@ -1,10 +1,10 @@
-import React, { PropsWithChildren, useContext } from 'react';
+import React, { HTMLAttributes, PropsWithChildren, useContext } from 'react';
 
-import { MenuContext } from '~/components/Menu/Menu';
+import { MenuContext } from '~/components/Menu';
 
 import MenuFooterStyled from './MenuFooter.styled';
 
-const MenuFooter = ({ children, ...props }: PropsWithChildren<any>) => {
+const MenuFooter = ({ children, ...props }: PropsWithChildren<HTMLAttributes<never>>) => {
   const { isMenuOpened } = useContext(MenuContext);
 
   return (

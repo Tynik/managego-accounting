@@ -7,6 +7,13 @@ export const BREAKPOINTS: Record<ScreenSize, string> = {
   lg: '1200px',
 };
 
+export const minScreen: Record<ScreenSize, string> = {
+  xs: `min-width: ${BREAKPOINTS.xs}`,
+  sm: `min-width: ${BREAKPOINTS.sm}`,
+  md: `min-width: ${BREAKPOINTS.md}`,
+  lg: `min-width: ${BREAKPOINTS.lg}`,
+};
+
 export const maxScreen: Record<ScreenSize, string> = {
   xs: `max-width: ${BREAKPOINTS.xs}`,
   sm: `max-width: ${BREAKPOINTS.sm}`,

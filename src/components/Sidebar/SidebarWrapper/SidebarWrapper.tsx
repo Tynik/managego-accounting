@@ -1,4 +1,4 @@
-import React, { createContext, PropsWithChildren, useMemo, useState } from 'react';
+import React, { createContext, HTMLAttributes, PropsWithChildren, useMemo, useState } from 'react';
 
 import { useScreenView } from '~/hooks';
 
@@ -16,7 +16,7 @@ export const SidebarWrapperContext = createContext<SidebarContextProps>({
   closeSidebar: () => {},
 });
 
-const SidebarWrapper = ({ children, ...props }: PropsWithChildren<any>) => {
+const SidebarWrapper = ({ children, ...props }: PropsWithChildren<HTMLAttributes<never>>) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const contentRef = useScreenView();

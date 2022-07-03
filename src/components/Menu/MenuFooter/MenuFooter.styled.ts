@@ -13,10 +13,12 @@ const MenuFooterStyled = styled.footer<MenuFooterStyledProps>`
   gap: 0.5rem;
   white-space: nowrap;
   justify-content: center;
+  color: #faf9f9;
 
   > * {
     opacity: ${({ isOpened }) => (isOpened ? 1 : 0)};
     transition: opacity 0.3s linear;
+    cursor: pointer;
   }
 `;
 

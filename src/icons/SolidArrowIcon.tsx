@@ -3,7 +3,7 @@ import React, { HTMLAttributes } from 'react';
 import IconStyled, { IconStyledProps } from '~/icons/Icon.styled';
 import SolidArrow from '~/assets/solid-arrow-right.svg';
 
-const SolidArrowIcon = (props: IconStyledProps & HTMLAttributes<any>) => {
+const SolidArrowIcon = (props: IconStyledProps & HTMLAttributes<never>) => {
   return (
     <IconStyled className="icon" {...props}>
       <SolidArrow />

@@ -1,10 +1,10 @@
-import React, { PropsWithChildren, useContext } from 'react';
+import React, { HTMLAttributes, PropsWithChildren, useContext } from 'react';
 
-import { MenuContext } from '~/components/Menu/Menu';
+import { MenuContext } from '~/components/Menu';
 
 import MenuItemsStyled from './MenuItems.styled';
 
-const MenuItems = ({ children, ...props }: PropsWithChildren<any>) => {
+const MenuItems = ({ children, ...props }: PropsWithChildren<HTMLAttributes<never>>) => {
   const { isMenuOpened } = useContext(MenuContext);
 
   return (

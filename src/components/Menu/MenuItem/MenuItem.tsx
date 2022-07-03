@@ -1,6 +1,5 @@
 import React, {
   ReactElement,
-  ElementType,
   HTMLAttributes,
   PropsWithChildren,
   useContext,
@@ -8,7 +7,7 @@ import React, {
   useMemo,
 } from 'react';
 
-import { MenuContext } from '~/components/Menu/Menu';
+import { MenuContext } from '~/components/Menu';
 
 import MenuItemStyled from './MenuItem.styled';
 
@@ -17,7 +16,7 @@ type MenuItemProps = {
   label: string;
   component: ReactElement;
   active?: boolean;
-} & HTMLAttributes<any>;
+} & HTMLAttributes<never>;
 
 const MenuItem = ({
   children,

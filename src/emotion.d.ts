@@ -34,11 +34,10 @@ declare module '@emotion/react' {
         text: string;
         border: string;
         panel: string;
+        shadow: string;
       };
     };
     button: Buttons;
-    actionPanel: {
-      shadowColor: string;
-    };
+    actionPanel: unknown;
   }
 }

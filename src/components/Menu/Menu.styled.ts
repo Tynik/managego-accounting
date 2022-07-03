@@ -2,11 +2,12 @@ import styled from '@emotion/styled';
 
 import { maxScreen } from '~/helpers';
 
+const MIN_MENU_WIDTH = '4.25rem';
 const MAX_MENU_WIDTH = '16.875rem';
 
 const MenuStyled = styled.nav<{ isOpened: boolean }>`
   height: 100vh;
-  width: ${({ isOpened }) => (isOpened ? MAX_MENU_WIDTH : 'calc(0.5rem + 0.75rem * 2 + 2.25rem)')};
+  width: ${({ isOpened }) => (isOpened ? MAX_MENU_WIDTH : MIN_MENU_WIDTH)};
   background: ${({ theme }) => theme.primary.color.primary};
   transition: width 0.3s ease-in-out;
   display: flex;
@@ -21,8 +22,14 @@ const MenuStyled = styled.nav<{ isOpened: boolean }>`
   }
 
   @media (${maxScreen.xs}) {
+    width: ${({ isOpened }) => (isOpened ? '100%' : 0)};
+  }
+
+  @media (${maxScreen.md}) {
+    width: ${MAX_MENU_WIDTH};
     transform: ${({ isOpened }) => (isOpened ? '0' : 'translateX(-100%)')};
     transition: transform 0.3s ease-in-out;
+
     position: absolute;
     z-index: 999;
     left: 0;
