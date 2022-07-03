@@ -17,7 +17,7 @@ export const SidebarWrapperContext = createContext<SidebarContextProps>({
 });
 
 const SidebarWrapper = ({ children, ...props }: PropsWithChildren<HTMLAttributes<never>>) => {
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(true);
 
   const contentRef = useScreenView();
 

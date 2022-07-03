@@ -5,6 +5,7 @@ export type SidebarStyledProps = {
 };
 
 const SidebarStyled = styled.aside<SidebarStyledProps>`
+  width: 20rem;
   transform: ${({ isSidebarOpened }) => (isSidebarOpened ? 0 : 'translateX(100%)')};
   transition: transform 0.3s ease-in-out;
   position: absolute;

@@ -11,22 +11,22 @@ import React, {
 import { SolidArrowIcon } from '~/icons';
 import { MenuContext } from '~/components/Menu';
 
-import MenuSubItemStyled from './MenuSubItem.styled';
+import MenuSecondItemStyled from './MenuSecondItem.styled';
 
-type MenuSubItemProps = {
+type MenuSecondItemProps = {
   icon: ReactElement;
   label: string;
   component?: ReactElement;
   active?: boolean;
 } & HTMLAttributes<never>;
 
-const MenuSubItem = ({
+const MenuSecondItem = ({
   children,
   icon,
   label,
   component,
   ...props
-}: PropsWithChildren<MenuSubItemProps>) => {
+}: PropsWithChildren<MenuSecondItemProps>) => {
   const { isMenuOpened } = useContext(MenuContext);
 
   const [isSubItemOpened, setIsSubItemOpened] = useState(true);
@@ -57,7 +57,7 @@ const MenuSubItem = ({
   );
 
   return (
-    <MenuSubItemStyled
+    <MenuSecondItemStyled
       isMenuOpened={isMenuOpened}
       isSubItemOpened={isSubItemOpened}
       areWithItems={Boolean(children)}
@@ -65,8 +65,8 @@ const MenuSubItem = ({
     >
       {linkElement}
       <div className="list">{children}</div>
-    </MenuSubItemStyled>
+    </MenuSecondItemStyled>
   );
 };
 
-export default MenuSubItem;
+export default MenuSecondItem;

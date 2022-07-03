@@ -5,6 +5,6 @@ export * from './Menu';
 export * from './MenuWrapper';
 export * from './MenuTitle';
 export * from './MenuItem';
-export * from './MenuSubItem';
+export * from './MenuSecondItem';
 export * from './MenuItems';
 export * from './MenuFooter';

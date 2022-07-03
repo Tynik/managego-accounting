@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-export type MenuSubItemStyledProps = {
+export type MenuSecondItemStyledProps = {
   isMenuOpened: boolean;
   isSubItemOpened: boolean;
   areWithItems: boolean;
   active?: boolean;
 };
 
-const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
+const MenuSecondItemStyled = styled.div<MenuSecondItemStyledProps>`
   > .item {
     display: flex;
     align-items: center;
@@ -95,4 +95,4 @@ const MenuSubItemStyled = styled.div<MenuSubItemStyledProps>`
   }
 `;
 
-export default MenuSubItemStyled;
+export default MenuSecondItemStyled;

@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, PropsWithChildren, useContext } from 'react';
 
-import { BurgerMenu } from '~/icons';
+import { BellIcon, BurgerMenu } from '~/icons';
 import { MenuContext, Avatar, IconButton, SearchInput } from '~/components';
 
 import TopBarStyled from './TopBar.styled';
@@ -16,7 +16,11 @@ const TopBar = ({ children, title, ...props }: PropsWithChildren<HTMLAttributes<
 
       <h1>{title}</h1>
 
-      <SearchInput placeholder="Search" />
+      <SearchInput placeholder="Search" extendable />
+
+      <IconButton>
+        <BellIcon />
+      </IconButton>
 
       <Avatar alt="MA" />
     </TopBarStyled>

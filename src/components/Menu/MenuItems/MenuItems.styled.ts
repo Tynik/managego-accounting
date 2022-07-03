@@ -6,6 +6,7 @@ export type MenuItemsStyledProps = {
 
 const MenuItemsStyled = styled.div<MenuItemsStyledProps>`
   flex-grow: 1;
+  overflow: hidden auto;
 `;
 
 export default MenuItemsStyled;

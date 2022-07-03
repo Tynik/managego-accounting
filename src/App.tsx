@@ -10,7 +10,7 @@ import {
   Menu,
   MenuItems,
   MenuItem,
-  MenuSubItem,
+  MenuSecondItem,
   MenuFooter,
   ManageGoLogo,
   MenuWrapper,
@@ -46,41 +46,41 @@ const App = () => {
                 icon={<DashboardIcon />}
                 label="Dashboard"
               >
-                <MenuSubItem label="Property Management" icon={<BuildingIcon />}>
+                <MenuSecondItem label="Property Management" icon={<BuildingIcon />}>
                   {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
                   <h6 onClick={() => navigate('/residents')}>Residents</h6>
                   <h6>Transactions</h6>
                   <h6>Entity/Buildings</h6>
-                </MenuSubItem>
+                </MenuSecondItem>
 
-                <MenuSubItem label="Vendors/AP" icon={<StorageIcon />}>
+                <MenuSecondItem label="Vendors/AP" icon={<StorageIcon />}>
                   <h6 onClick={() => navigate('/vendors-list')}>Vendors List</h6>
                   <h6>Pay Bills</h6>
                   <h6>Payroll</h6>
-                </MenuSubItem>
+                </MenuSecondItem>
 
-                <MenuSubItem
+                <MenuSecondItem
                   label="Banking/Accounting"
                   icon={<BankIcon />}
                   component={<Link to="/banking" />}
                   active={location.pathname === '/banking'}
                 />
 
-                <MenuSubItem
+                <MenuSecondItem
                   label="Reports"
                   icon={<ReportsIcon />}
                   component={<Link to="/reports" />}
                   active={location.pathname === '/reports'}
                 />
 
-                <MenuSubItem
+                <MenuSecondItem
                   label="Ledger"
                   icon={<DollarIcon />}
                   component={<Link to="/ledger" />}
                   active={location.pathname === '/ledger'}
                 />
 
-                <MenuSubItem
+                <MenuSecondItem
                   label="Setup"
                   icon={<SettingsIcon />}
                   component={<Link to="/setup" />}
