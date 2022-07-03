@@ -4,6 +4,15 @@ import { Global, css } from '@emotion/react';
 const GlobalStyles = () => (
   <Global
     styles={css`
+      body {
+        min-height: 100vh;
+        min-height: fill-available;
+        min-height: -webkit-fill-available;
+      }
+      html {
+        height: fill-available;
+        height: -webkit-fill-available;
+      }
       html,
       body {
         margin: 0;

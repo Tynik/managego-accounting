@@ -11,7 +11,7 @@ const TopBar = ({ children, title, ...props }: PropsWithChildren<HTMLAttributes<
   return (
     <TopBarStyled {...props}>
       <IconButton id="burger-btn" onClick={toggleMenu}>
-        <BurgerMenu />
+        <BurgerMenu size="small" />
       </IconButton>
 
       <h1>{title}</h1>
