@@ -16,8 +16,9 @@ const IconStyled = styled.div<IconStyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-out;
+
   transform: ${({ rotate }) => (rotate ? `rotate(${rotate}deg)` : '')};
+  transition: all 0.3s ease-out;
 
   svg {
     width: ${({ size }) => sizes[size || 'medium']};

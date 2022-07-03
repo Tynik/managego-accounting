@@ -11,9 +11,8 @@ const ActionPanelFilter = ({
 }: PropsWithChildren<ActionPanelFilterProps>) => {
   return (
     <ActionPanelFilterStyled {...props}>
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-      <label>{label}</label>
-      <div className="">{children}</div>
+      <span className="label">{label}</span>
+      {children}
     </ActionPanelFilterStyled>
   );
 };

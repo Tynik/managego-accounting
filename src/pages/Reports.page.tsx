@@ -12,6 +12,7 @@ import {
   TableRow,
   TableBody,
   TableCell,
+  Select,
 } from '~/components';
 import { DownloadIcon } from '~/icons';
 
@@ -21,14 +22,15 @@ const ReportsPage = () => {
       <ActionPanel>
         <ActionPanelContent>
           <ActionPanelFilter label="View:">
-            <select />
+            <Select
+              options={['Profit & Loss', 'Deliquency', 'Unit Occupancy', 'Expenses by Vendor']}
+              placeholder="Profit & Loss"
+            />
           </ActionPanelFilter>
           <ActionPanelFilter label="Building:">
-            <select />
+            <Select options={[]} placeholder="All Buildings" />
           </ActionPanelFilter>
-          <ActionPanelFilter label="Date Range:">
-            <select />
-          </ActionPanelFilter>
+          <ActionPanelFilter label="Date Range:" />
         </ActionPanelContent>
         <ActionPanelActions>
           <Button size="small" variant="outlined">

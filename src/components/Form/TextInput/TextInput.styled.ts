@@ -3,24 +3,27 @@ import { css } from '@emotion/react';
 
 export type TextInputStyledProps = {
   error?: string | boolean;
+  fullWidth?: boolean;
 };
 
 const TextInputStyled = styled.div<TextInputStyledProps>`
-  font-weight: 400;
   display: flex;
   flex-direction: column;
   gap: 0.188rem;
 
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : '12.5rem')};
+
+  font-weight: 400;
+
   > input {
     border: none;
     border-bottom: 1px solid #e8e8e8;
-    background-color: #f1f1f126;
     border-radius: 0;
 
-    margin-top: 1.75rem;
-    padding: 0.25rem 0.625rem;
-
     color: #4a5354;
+    background-color: #f1f1f126;
+
+    padding: 0.25rem 0.625rem;
     font-size: 0.875rem;
 
     ${({ error }) =>

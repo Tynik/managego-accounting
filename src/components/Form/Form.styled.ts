@@ -10,6 +10,10 @@ const FormStyled = styled.form`
   > .items {
     display: flex;
     flex-direction: column;
+
+    > * {
+      margin-top: 1.75rem;
+    }
   }
 `;
 

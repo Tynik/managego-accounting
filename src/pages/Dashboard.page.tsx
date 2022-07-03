@@ -7,6 +7,7 @@ import {
   ActionPanelContent,
   ActionPanelFilter,
   Content,
+  Select,
 } from '~/components';
 import { DownloadIcon } from '~/icons';
 
@@ -16,10 +17,11 @@ const DashboardPage = () => {
       <ActionPanel>
         <ActionPanelContent>
           <ActionPanelFilter label="Property:">
-            <select />
+            <Select options={[]} placeholder="Input Title" />
           </ActionPanelFilter>
+
           <ActionPanelFilter label="Unit:">
-            <select />
+            <Select options={[]} placeholder="Unit Title" />
           </ActionPanelFilter>
 
           <Button size="small" color="info" variant="text">

@@ -4,9 +4,9 @@ import TextInputStyled, { TextInputStyledProps } from './TextInput.styled';
 
 type TextInputProps = PropsWithChildren<TextInputStyledProps & InputHTMLAttributes<never>>;
 
-const TextInput = ({ error, ...props }: TextInputProps) => {
+const TextInput = ({ error, fullWidth, ...props }: TextInputProps) => {
   return (
-    <TextInputStyled error={error}>
+    <TextInputStyled error={error} fullWidth={fullWidth}>
       <input {...props} />
       {typeof error === 'string' && <span className="error">{error}</span>}
     </TextInputStyled>

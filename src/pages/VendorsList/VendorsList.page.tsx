@@ -13,6 +13,7 @@ import {
   TextInput,
   FormButtons,
   Checkbox,
+  Select,
 } from '~/components';
 import { VendorsListContent } from '~/pages';
 import { DownloadIcon } from '~/icons';
@@ -23,7 +24,7 @@ const VendorsListPage = () => {
       <ActionPanel>
         <ActionPanelContent>
           <ActionPanelFilter label="Vendors For:">
-            <select />
+            <Select options={[]} placeholder="All Buildings" />
           </ActionPanelFilter>
         </ActionPanelContent>
         <ActionPanelActions>
@@ -41,11 +42,11 @@ const VendorsListPage = () => {
 
         <Sidebar title="Add Vendor">
           <Form title="Vendor Setup">
-            <TextInput placeholder="Vendor Name" />
+            <TextInput placeholder="Vendor Name" fullWidth />
 
-            <TextInput placeholder="Vendor Address" />
+            <TextInput placeholder="Vendor Address" fullWidth />
 
-            <TextInput placeholder="Select Term (!!! Select)" />
+            <Select options={[]} placeholder="Select Term" fullWidth />
 
             <Checkbox label="Split balances between Residents" />
 

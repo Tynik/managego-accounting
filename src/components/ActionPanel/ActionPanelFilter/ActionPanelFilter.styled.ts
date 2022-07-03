@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const ActionPanelFilterStyled = styled.div`
+const ActionPanelFilterStyled = styled.label`
   color: #4a5354;
   font-size: 0.875rem;
   font-weight: 400;
