@@ -15,6 +15,9 @@ const TopBarStyled = styled.div`
     font-weight: 400;
     color: #4a5354;
     flex-grow: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   @media (${minScreen.md}) {

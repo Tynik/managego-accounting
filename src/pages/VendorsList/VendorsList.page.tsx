@@ -12,9 +12,10 @@ import {
   Form,
   TextInput,
   FormButtons,
+  Checkbox,
 } from '~/components';
 import { VendorsListContent } from '~/pages';
-import Checkbox from '~/components/Form/Checkbox/Checkbox';
+import { DownloadIcon } from '~/icons';
 
 const VendorsListPage = () => {
   return (
@@ -27,6 +28,7 @@ const VendorsListPage = () => {
         </ActionPanelContent>
         <ActionPanelActions>
           <Button size="small" variant="outlined">
+            <DownloadIcon size="small" />
             Export
           </Button>
         </ActionPanelActions>

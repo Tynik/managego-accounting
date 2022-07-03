@@ -1,7 +1,8 @@
 import React from 'react';
 
-import IconStyled, { IconStyledProps } from '~/icons/Icon.styled';
 import ArrowsLeft from '~/assets/arrows-left.svg';
+
+import IconStyled, { IconStyledProps } from './Icon.styled';
 
 const ArrowsIcon = (props: IconStyledProps) => {
   return (

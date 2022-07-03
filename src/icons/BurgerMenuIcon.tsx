@@ -1,9 +1,10 @@
 import React from 'react';
 
-import IconStyled from '~/icons/Icon.styled';
 import BurgerMenu from '~/assets/burger-menu.svg';
 
-const BurgerMenuIcon = props => {
+import IconStyled, { IconStyledProps } from './Icon.styled';
+
+const BurgerMenuIcon = (props: IconStyledProps) => {
   return (
     <IconStyled className="icon" {...props}>
       <BurgerMenu />

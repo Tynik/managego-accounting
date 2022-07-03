@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { maxScreen } from '~/helpers';
 
 export type SidebarStyledProps = {
   isSidebarOpened: boolean;
@@ -27,6 +28,10 @@ const SidebarStyled = styled.aside<SidebarStyledProps>`
   > .content {
     flex-grow: 1;
     padding: 0.75rem 0;
+  }
+
+  @media (${maxScreen.xs}) {
+    width: 100%;
   }
 `;
 

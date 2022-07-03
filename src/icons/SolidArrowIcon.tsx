@@ -1,9 +1,10 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 
-import IconStyled, { IconStyledProps } from '~/icons/Icon.styled';
 import SolidArrow from '~/assets/solid-arrow-right.svg';
 
-const SolidArrowIcon = (props: IconStyledProps & HTMLAttributes<never>) => {
+import IconStyled, { IconStyledProps } from './Icon.styled';
+
+const SolidArrowIcon = (props: IconStyledProps) => {
   return (
     <IconStyled className="icon" {...props}>
       <SolidArrow />

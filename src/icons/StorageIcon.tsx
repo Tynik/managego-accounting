@@ -1,9 +1,10 @@
 import React from 'react';
 
-import IconStyled from '~/icons/Icon.styled';
 import Storage from '~/assets/storage.svg';
 
-const StorageIcon = props => {
+import IconStyled, { IconStyledProps } from './Icon.styled';
+
+const StorageIcon = (props: IconStyledProps) => {
   return (
     <IconStyled className="icon" {...props}>
       <Storage />

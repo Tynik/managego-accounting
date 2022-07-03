@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Button,
   ActionPanel,
@@ -12,6 +13,7 @@ import {
   TableBody,
   TableCell,
 } from '~/components';
+import { DownloadIcon } from '~/icons';
 
 const ReportsPage = () => {
   return (
@@ -30,6 +32,7 @@ const ReportsPage = () => {
         </ActionPanelContent>
         <ActionPanelActions>
           <Button size="small" variant="outlined">
+            <DownloadIcon size="small" />
             Export
           </Button>
         </ActionPanelActions>

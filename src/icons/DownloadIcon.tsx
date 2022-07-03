@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Building from '~/assets/building.svg';
+import Download from '~/assets/download.svg';
 
 import IconStyled, { IconStyledProps } from './Icon.styled';
 
-const BuildingIcon = (props: IconStyledProps) => {
+const DownloadIcon = (props: IconStyledProps) => {
   return (
     <IconStyled className="icon" {...props}>
-      <Building />
+      <Download />
     </IconStyled>
   );
 };
 
-export default BuildingIcon;
+export default DownloadIcon;

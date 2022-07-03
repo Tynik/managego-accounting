@@ -11,3 +11,4 @@ export { default as SettingsIcon } from './SettingsIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as BurgerMenu } from './BurgerMenuIcon';
 export { default as BellIcon } from './BellIcon';
+export { default as DownloadIcon } from './DownloadIcon';

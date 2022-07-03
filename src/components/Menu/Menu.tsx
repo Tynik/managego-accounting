@@ -18,7 +18,7 @@ const Menu = ({ children, title }: PropsWithChildren<MenuProps>) => {
         <h4>{title}</h4>
 
         <IconButton onClick={toggleMenu} backgroundColor="#3e7694">
-          <ArrowsIcon rotate={isMenuOpened ? 0 : 180} size="large" />
+          <ArrowsIcon rotate={isMenuOpened ? 0 : 180} />
         </IconButton>
       </MenuTitle>
 

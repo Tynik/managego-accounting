@@ -18,6 +18,10 @@ export type ButtonStyledProps = {
 } & ButtonHTMLAttributes<never>;
 
 const ButtonStyled = styled.button<ButtonStyledProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
   width: ${({ size }) => sizes[size || 'medium']};
   padding: 0.5rem;
 

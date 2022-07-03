@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Button,
   ActionPanel,
@@ -6,12 +7,8 @@ import {
   ActionPanelContent,
   ActionPanelFilter,
   Content,
-  Table,
-  TableHead,
-  TableRow,
-  TableBody,
-  TableCell,
 } from '~/components';
+import { DownloadIcon } from '~/icons';
 
 const DashboardPage = () => {
   return (
@@ -31,6 +28,7 @@ const DashboardPage = () => {
         </ActionPanelContent>
         <ActionPanelActions>
           <Button size="small" variant="outlined">
+            <DownloadIcon size="small" />
             Export
           </Button>
         </ActionPanelActions>

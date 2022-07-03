@@ -1,9 +1,10 @@
 import React from 'react';
 
-import IconStyled from '~/icons/Icon.styled';
 import Search from '~/assets/search.svg';
 
-const SearchIcon = props => {
+import IconStyled, { IconStyledProps } from './Icon.styled';
+
+const SearchIcon = (props: IconStyledProps) => {
   return (
     <IconStyled className="icon" {...props}>
       <Search />

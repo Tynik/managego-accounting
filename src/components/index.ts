@@ -13,3 +13,4 @@ export * from './Table';
 export * from './Sidebar';
 export * from './Form';
 export * from './SearchInput';
+export * from './Badge';

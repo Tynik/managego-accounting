@@ -1,9 +1,10 @@
 import React from 'react';
 
-import IconStyled from '~/icons/Icon.styled';
 import Bell from '~/assets/bell.svg';
 
-const BellIcon = props => {
+import IconStyled, { IconStyledProps } from './Icon.styled';
+
+const BellIcon = (props: IconStyledProps) => {
   return (
     <IconStyled className="icon" {...props}>
       <Bell />
