@@ -4,21 +4,24 @@ import { SolidArrowIcon } from '~/icons';
 
 import SelectStyled, { SelectStyledProps } from './Select.styled';
 
-type SelectProps = { options: string[] } & Pick<SelectStyledProps, 'fullWidth'> &
+type SelectProps = {
+  action: string;
+  options: string[];
+} & Pick<SelectStyledProps, 'fullWidth'> &
   InputHTMLAttributes<never>;
 
-const Select = ({ options, placeholder, fullWidth, ...props }: SelectProps) => {
+const Select = ({ action, options, placeholder, fullWidth, ...props }: SelectProps) => {
   const [isOpened, setIsOpened] = useState(false);
   const [value, setValue] = useState(null);
 
-  const optionsRef = useRef<HTMLDivElement>();
+  const dropdownRef = useRef<HTMLDivElement>();
 
   useEffect(() => {
     if (!isOpened) {
-      return;
+      return () => {};
     }
     const handleClickOutside = (e: any) => {
-      if (optionsRef.current && !optionsRef.current.contains(e.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsOpened(false);
       }
     };
@@ -27,7 +30,7 @@ const Select = ({ options, placeholder, fullWidth, ...props }: SelectProps) => {
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
     };
-  }, [optionsRef, isOpened]);
+  }, [dropdownRef, isOpened]);
 
   const onClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -37,6 +40,8 @@ const Select = ({ options, placeholder, fullWidth, ...props }: SelectProps) => {
 
   const onOptionsClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+
+    // setValue()
   };
 
   return (
@@ -45,14 +50,19 @@ const Select = ({ options, placeholder, fullWidth, ...props }: SelectProps) => {
       <SolidArrowIcon className="arrow" rotate={isOpened ? 270 : 90} />
       <input {...props} />
 
-      <div ref={optionsRef} className="options" onClick={onOptionsClickHandler}>
-        {options.map(option => (
-          <div key={option} className="option">
-            {option}
-          </div>
-        ))}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+      <div ref={dropdownRef} className="dropdown" onClick={onOptionsClickHandler}>
+        <div className="action">{action}</div>
 
-        {!options.length && <div>No Options</div>}
+        <div className="options">
+          {options.map(option => (
+            <div key={option} className="option" data-option={option}>
+              {option}
+            </div>
+          ))}
+
+          {!options.length && <div className="empty">No Options</div>}
+        </div>
       </div>
     </SelectStyled>
   );

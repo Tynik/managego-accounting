@@ -37,10 +37,12 @@ const SelectStyled = styled.div<SelectStyledProps>`
     display: none;
   }
 
-  > .options {
+  > .dropdown {
     position: absolute;
+
+    width: inherit;
     max-height: 12.5rem;
-    overflow: auto;
+
     display: ${({ isOpened }) => (isOpened ? 'block' : 'none')};
     padding: 0.75rem 0.5rem;
 
@@ -48,16 +50,33 @@ const SelectStyled = styled.div<SelectStyledProps>`
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.12);
     background-color: #fff;
 
-    .option {
-      padding: 0.313rem 0.5rem;
-      cursor: pointer;
+    > .action {
+      padding: 0 0.625rem 0.5rem;
+      border-bottom: 1px solid #e8e8e8;
 
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #5b5959;
+    }
 
-      &:hover {
-        background-color: #c9eae2;
+    > .options {
+      margin-top: 0.625rem;
+      overflow: auto;
+
+      > * {
+        padding: 0.313rem 0.5rem;
+      }
+
+      > .option {
+        cursor: pointer;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &:hover {
+          background-color: #c9eae2;
+        }
       }
     }
   }

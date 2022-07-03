@@ -24,7 +24,7 @@ const VendorsListPage = () => {
       <ActionPanel>
         <ActionPanelContent>
           <ActionPanelFilter label="Vendors For:">
-            <Select options={[]} placeholder="All Buildings" />
+            <Select action="Select Building(s):" options={[]} placeholder="All Buildings" />
           </ActionPanelFilter>
         </ActionPanelContent>
         <ActionPanelActions>
@@ -46,7 +46,7 @@ const VendorsListPage = () => {
 
             <TextInput placeholder="Vendor Address" fullWidth />
 
-            <Select options={[]} placeholder="Select Term" fullWidth />
+            <Select action="Select Term:" options={[]} placeholder="Select Term" fullWidth />
 
             <Checkbox label="Split balances between Residents" />
 

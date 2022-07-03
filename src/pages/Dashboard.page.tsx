@@ -17,11 +17,11 @@ const DashboardPage = () => {
       <ActionPanel>
         <ActionPanelContent>
           <ActionPanelFilter label="Property:">
-            <Select options={[]} placeholder="Input Title" />
+            <Select action="Select Input:" options={[]} placeholder="Input Title" />
           </ActionPanelFilter>
 
           <ActionPanelFilter label="Unit:">
-            <Select options={[]} placeholder="Unit Title" />
+            <Select action="Select Unit:" options={[]} placeholder="Unit Title" />
           </ActionPanelFilter>
 
           <Button size="small" color="info" variant="text">

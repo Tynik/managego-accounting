@@ -23,12 +23,13 @@ const ReportsPage = () => {
         <ActionPanelContent>
           <ActionPanelFilter label="View:">
             <Select
+              action="Select Report:"
               options={['Profit & Loss', 'Deliquency', 'Unit Occupancy', 'Expenses by Vendor']}
               placeholder="Profit & Loss"
             />
           </ActionPanelFilter>
           <ActionPanelFilter label="Building:">
-            <Select options={[]} placeholder="All Buildings" />
+            <Select action="Select Building(s):" options={[]} placeholder="All Buildings" />
           </ActionPanelFilter>
           <ActionPanelFilter label="Date Range:" />
         </ActionPanelContent>
