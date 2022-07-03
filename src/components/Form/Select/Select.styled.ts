@@ -39,6 +39,7 @@ const SelectStyled = styled.div<SelectStyledProps>`
 
   > .dropdown {
     position: absolute;
+    z-index: 999;
 
     width: inherit;
     max-height: 12.5rem;

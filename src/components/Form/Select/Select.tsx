@@ -48,6 +48,10 @@ const Select = ({
     e.preventDefault();
 
     setIsOpened(!isOpened);
+
+    setTimeout(() => {
+      dropdownRef.current.style.bottom = `-${dropdownRef.current.clientHeight}px`;
+    });
   };
 
   const onOptionsClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {

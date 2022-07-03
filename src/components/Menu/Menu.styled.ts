@@ -31,7 +31,7 @@ const MenuStyled = styled.nav<{ isOpened: boolean }>`
     transition: transform 0.3s ease-in-out;
 
     position: absolute;
-    z-index: 999;
+    z-index: 9999;
     top: 0;
     right: 0;
     bottom: 0;
