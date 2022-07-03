@@ -1,16 +1,28 @@
 import React, { InputHTMLAttributes, useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 
 import { SolidArrowIcon } from '~/icons';
+import { SearchInput } from '~/components';
 
 import SelectStyled, { SelectStyledProps } from './Select.styled';
 
 type SelectProps = {
   action: string;
   options: string[];
+  multiple?: boolean;
+  search?: boolean;
 } & Pick<SelectStyledProps, 'fullWidth'> &
   InputHTMLAttributes<never>;
 
-const Select = ({ action, options, placeholder, fullWidth, ...props }: SelectProps) => {
+const Select = ({
+  action,
+  options,
+  placeholder,
+  fullWidth,
+  multiple,
+  search,
+  ...props
+}: SelectProps) => {
   const [isOpened, setIsOpened] = useState(false);
   const [value, setValue] = useState(null);
 
@@ -54,7 +66,11 @@ const Select = ({ action, options, placeholder, fullWidth, ...props }: SelectPro
       <div ref={dropdownRef} className="dropdown" onClick={onOptionsClickHandler}>
         <div className="action">{action}</div>
 
-        <div className="options">
+        {search && <SearchInput placeholder="Search" />}
+
+        <div className="divider" />
+
+        <div className={clsx('options', { multiple })}>
           {options.map(option => (
             <div key={option} className="option" data-option={option}>
               {option}

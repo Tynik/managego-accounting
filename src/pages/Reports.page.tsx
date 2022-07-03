@@ -29,7 +29,13 @@ const ReportsPage = () => {
             />
           </ActionPanelFilter>
           <ActionPanelFilter label="Building:">
-            <Select action="Select Building(s):" options={[]} placeholder="All Buildings" />
+            <Select
+              action="Select Building(s):"
+              options={[]}
+              placeholder="All Buildings"
+              multiple
+              search
+            />
           </ActionPanelFilter>
           <ActionPanelFilter label="Date Range:" />
         </ActionPanelContent>

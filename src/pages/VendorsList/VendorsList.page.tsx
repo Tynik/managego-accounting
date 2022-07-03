@@ -24,7 +24,12 @@ const VendorsListPage = () => {
       <ActionPanel>
         <ActionPanelContent>
           <ActionPanelFilter label="Vendors For:">
-            <Select action="Select Building(s):" options={[]} placeholder="All Buildings" />
+            <Select
+              action="Select Building(s):"
+              options={[]}
+              placeholder="All Buildings"
+              multiple
+            />
           </ActionPanelFilter>
         </ActionPanelContent>
         <ActionPanelActions>

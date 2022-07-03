@@ -14,7 +14,7 @@ const SearchInput = ({ children, extendable, ...props }: SearchInputProps) => {
   };
 
   return (
-    <SearchInputStyled extendable={extendable}>
+    <SearchInputStyled className="search" extendable={extendable}>
       <SearchIcon onClick={onSearchClickHandler} />
       <input ref={inputRef} {...props} />
     </SearchInputStyled>

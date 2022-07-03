@@ -9,6 +9,7 @@ specifiers:
   '@types/react-dom': ^18.0.5
   '@typescript-eslint/eslint-plugin': ^5.28.0
   '@typescript-eslint/parser': ^5.28.0
+  clsx: ^1.2.0
   copy-webpack-plugin: ^11.0.0
   eslint: ^8.18.0
   eslint-config-airbnb: ^19.0.4
@@ -35,6 +36,7 @@ dependencies:
   '@emotion/react': 11.9.3_4jaruczdv2uxjj3lb2xbkiuci4
   '@emotion/styled': 11.9.3_toiz7tndcw4z2b7gxmmeo5fkcu
   '@svgr/webpack': 6.2.1
+  clsx: 1.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
@@ -2513,6 +2515,11 @@ packages:
       kind-of: 6.0.3
       shallow-clone: 3.0.1
     dev: true
+
+  /clsx/1.2.0:
+    resolution: {integrity: sha512-EPRP7XJsM1y0iCU3Z7C7jFKdQboXSeHgEfzQUTlz7m5NP3hDrlz48aUsmNGp4pC+JOW9WA3vIRqlYuo/bl4Drw==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}

@@ -51,12 +51,20 @@ const SelectStyled = styled.div<SelectStyledProps>`
     background-color: #fff;
 
     > .action {
-      padding: 0 0.625rem 0.5rem;
-      border-bottom: 1px solid #e8e8e8;
+      padding: 0 0.625rem;
 
       font-size: 0.875rem;
       font-weight: 400;
       color: #5b5959;
+    }
+
+    > .divider {
+      margin-top: 0.625rem;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    > .search {
+      margin-top: 0.625rem;
     }
 
     > .options {
