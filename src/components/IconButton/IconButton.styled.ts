@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 type IconButtonStyledProps = {
-  backgroundColor: string;
+  backgroundColor?: string;
 };
 
 const IconButtonStyled = styled.div<IconButtonStyledProps>`
@@ -10,7 +10,7 @@ const IconButtonStyled = styled.div<IconButtonStyledProps>`
   padding: 0.25rem;
 
   &:hover {
-    background-color: ${({ backgroundColor }) => backgroundColor};
+    background-color: ${({ backgroundColor }) => backgroundColor || '#f8f8f8'};
   }
 
   &:active {
