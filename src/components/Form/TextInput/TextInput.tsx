@@ -1,15 +1,22 @@
-import React, { InputHTMLAttributes, PropsWithChildren } from 'react';
+import React, { InputHTMLAttributes, PropsWithChildren, TextareaHTMLAttributes } from 'react';
 
 import { ClearIcon } from '~/icons';
 
 import TextInputStyled, { TextInputStyledProps } from './TextInput.styled';
 
-type TextInputProps = PropsWithChildren<TextInputStyledProps & InputHTMLAttributes<never>>;
+type TextInputProps = PropsWithChildren<
+  {
+    multiline?: boolean;
+  } & TextInputStyledProps &
+    (InputHTMLAttributes<never> | TextareaHTMLAttributes<never>)
+>;
 
-const TextInput = ({ error, fullWidth, clearable, ...props }: TextInputProps) => {
+const TextInput = ({ error, fullWidth, multiline, clearable, ...props }: TextInputProps) => {
+  const component = multiline ? <textarea {...props} /> : <input {...props} />;
+
   return (
     <TextInputStyled error={error} fullWidth={fullWidth} clearable={clearable}>
-      <input {...props} />
+      {component}
 
       {clearable !== false && props.value && <ClearIcon className="clear" />}
 

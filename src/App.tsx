@@ -24,7 +24,7 @@ import {
   DollarIcon,
   SettingsIcon,
 } from '~/icons';
-import { DashboardPage, ReportsPage, VendorsList } from '~/pages';
+import { DashboardPage, ReportsPage, TransactionsPage, VendorsPage } from '~/pages';
 
 import lightTheme from '~/themes/light';
 import { PAGES } from '~/constants';
@@ -49,12 +49,12 @@ const App = () => {
                 <MenuSecondItem label="Property Management" icon={<BuildingIcon />}>
                   {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
                   <h6 onClick={() => navigate('/residents')}>Residents</h6>
-                  <h6>Transactions</h6>
+                  <h6 onClick={() => navigate('/transactions')}>Transactions</h6>
                   <h6>Entity/Buildings</h6>
                 </MenuSecondItem>
 
                 <MenuSecondItem label="Vendors/AP" icon={<StorageIcon />}>
-                  <h6 onClick={() => navigate('/vendors-list')}>Vendors List</h6>
+                  <h6 onClick={() => navigate('/vendors')}>Vendors List</h6>
                   <h6>Pay Bills</h6>
                   <h6>Payroll</h6>
                 </MenuSecondItem>
@@ -101,7 +101,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<DashboardPage />} />
               <Route path="reports" element={<ReportsPage />} />
-              <Route path="vendors-list" element={<VendorsList />} />
+              <Route path="vendors" element={<VendorsPage />} />
+              <Route path="transactions" element={<TransactionsPage />} />
             </Routes>
           </Main>
         </MenuWrapper>

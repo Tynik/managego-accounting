@@ -6,8 +6,11 @@ export const PAGES: Record<string, PageInfo> = {
   '/': {
     title: 'Dashboard',
   },
-  '/vendors-list': {
+  '/vendors': {
     title: 'Vendors List',
+  },
+  '/transactions': {
+    title: 'Transactions',
   },
   '/banking': {
     title: 'Banking/Accounting',

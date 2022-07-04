@@ -15,10 +15,10 @@ import {
   Checkbox,
   Select,
 } from '~/components';
-import { VendorsListContent } from '~/pages';
+import { VendorsPageContent } from '~/pages';
 import { DownloadIcon } from '~/icons';
 
-const VendorsListPage = () => {
+const VendorsPage = () => {
   return (
     <>
       <ActionPanel>
@@ -42,7 +42,7 @@ const VendorsListPage = () => {
 
       <SidebarWrapper>
         <SidebarPageContent>
-          <VendorsListContent />
+          <VendorsPageContent />
         </SidebarPageContent>
 
         <Sidebar title="Add Vendor">
@@ -67,4 +67,4 @@ const VendorsListPage = () => {
   );
 };
 
-export default VendorsListPage;
+export default VendorsPage;

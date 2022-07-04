@@ -17,7 +17,10 @@ const TextInputStyled = styled.div<TextInputStyledProps>`
 
   font-weight: 400;
 
-  > input {
+  > input,
+  textarea {
+    width: inherit !important;
+
     border: none;
     border-bottom: 1px solid #e8e8e8;
     border-radius: 0;
@@ -28,6 +31,10 @@ const TextInputStyled = styled.div<TextInputStyledProps>`
     padding: 0.25rem ${({ clearable }) => (clearable !== false ? '1.5rem' : '0.625rem')} 0.25rem
       0.625rem;
     font-size: 0.875rem;
+
+    &::placeholder {
+      font-family: 'Roboto';
+    }
 
     ${({ error }) =>
       error &&
