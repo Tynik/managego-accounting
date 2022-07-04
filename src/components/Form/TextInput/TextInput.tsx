@@ -11,16 +11,33 @@ type TextInputProps = PropsWithChildren<
     (InputHTMLAttributes<never> | TextareaHTMLAttributes<never>)
 >;
 
-const TextInput = ({ error, fullWidth, multiline, clearable, ...props }: TextInputProps) => {
-  const component = multiline ? <textarea {...props} /> : <input {...props} />;
+const TextInput = ({
+  error,
+  fullWidth,
+  multiline,
+  clearable,
+  required,
+  ...props
+}: TextInputProps) => {
+  const extendedProps: InputHTMLAttributes<never> = {
+    ...props,
+    'aria-invalid': Boolean(error),
+    'aria-required': required || false,
+  };
+
+  const component = multiline ? <textarea {...extendedProps} /> : <input {...extendedProps} />;
 
   return (
     <TextInputStyled error={error} fullWidth={fullWidth} clearable={clearable}>
       {component}
 
-      {clearable !== false && props.value && <ClearIcon className="clear" />}
+      {clearable !== false && props.value && <ClearIcon />}
 
-      {typeof error === 'string' && <span className="error">{error}</span>}
+      {typeof error === 'string' && (
+        <span className="error" aria-live="assertive">
+          {error}
+        </span>
+      )}
     </TextInputStyled>
   );
 };

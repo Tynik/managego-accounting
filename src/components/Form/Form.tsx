@@ -8,7 +8,7 @@ type FormProps = {
 
 const Form = ({ children, title, ...props }: PropsWithChildren<FormProps>) => {
   return (
-    <FormStyled {...props}>
+    <FormStyled aria-label={title} {...props}>
       {title && <h4>{title}</h4>}
       <div className="items">{children}</div>
     </FormStyled>

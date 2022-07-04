@@ -27,8 +27,7 @@ const SidebarStyled = styled.aside<SidebarStyledProps>`
 
   > .content {
     flex-grow: 1;
-    padding: 0.75rem 0;
-    // TODO: Brakes left/right borders for form inputs
+    padding: 0.75rem 0.125rem;
     overflow-y: auto;
   }
 

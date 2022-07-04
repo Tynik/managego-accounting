@@ -47,11 +47,10 @@ const Select = ({
   const onClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
 
-    setIsOpened(!isOpened);
-
-    setTimeout(() => {
+    if (!isOpened) {
       dropdownRef.current.style.bottom = `-${dropdownRef.current.clientHeight}px`;
-    });
+    }
+    setIsOpened(!isOpened);
   };
 
   const onOptionsClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -67,16 +66,28 @@ const Select = ({
       <input {...props} />
 
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-      <div ref={dropdownRef} className="dropdown" onClick={onOptionsClickHandler}>
+      <div
+        ref={dropdownRef}
+        className="dropdown"
+        onClick={onOptionsClickHandler}
+        aria-expanded={isOpened}
+        aria-label={action}
+      >
         <div className="action">{action}</div>
 
         {search && <SearchInput placeholder="Search" />}
 
         <div className="divider" />
 
-        <div className={clsx('options', { multiple })}>
+        <div className={clsx('options', { multiple })} role="list">
           {options.map(option => (
-            <div key={option} className="option" data-option={option}>
+            <div
+              key={option}
+              className="option"
+              title={option}
+              data-option={option}
+              role="listitem"
+            >
               {option}
             </div>
           ))}

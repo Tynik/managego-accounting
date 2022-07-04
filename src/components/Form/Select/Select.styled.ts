@@ -39,12 +39,12 @@ const SelectStyled = styled.div<SelectStyledProps>`
 
   > .dropdown {
     position: absolute;
-    z-index: 999;
+    z-index: ${({ isOpened }) => (isOpened ? 999 : -1)};
 
     width: inherit;
     max-height: 12.5rem;
 
-    display: ${({ isOpened }) => (isOpened ? 'block' : 'none')};
+    opacity: ${({ isOpened }) => (isOpened ? 1 : 0)};
     padding: 0.75rem 0.5rem;
 
     border-radius: 0.25rem;
@@ -60,12 +60,16 @@ const SelectStyled = styled.div<SelectStyledProps>`
     }
 
     > .divider {
-      margin-top: 0.625rem;
+      margin: 0.625rem 0.625rem 0;
       border-bottom: 1px solid #e8e8e8;
     }
 
     > .search {
       margin-top: 0.625rem;
+
+      input {
+        font-size: 0.625rem;
+      }
     }
 
     > .options {
@@ -86,6 +90,10 @@ const SelectStyled = styled.div<SelectStyledProps>`
         &:hover {
           background-color: #c9eae2;
         }
+      }
+
+      > .empty {
+        font-size: 0.75rem;
       }
     }
   }

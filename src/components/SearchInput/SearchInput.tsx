@@ -1,12 +1,12 @@
-import React, { InputHTMLAttributes, PropsWithChildren, useRef } from 'react';
+import React, { InputHTMLAttributes, useRef } from 'react';
 
 import { SearchIcon } from '~/icons';
 
 import SearchInputStyled, { SearchInputStyledProps } from './SearchInput.styled';
 
-type SearchInputProps = PropsWithChildren<SearchInputStyledProps & InputHTMLAttributes<never>>;
+type SearchInputProps = SearchInputStyledProps & InputHTMLAttributes<never>;
 
-const SearchInput = ({ children, extendable, ...props }: SearchInputProps) => {
+const SearchInput = ({ extendable, ...props }: SearchInputProps) => {
   const inputRef = useRef<HTMLInputElement>();
 
   const onSearchClickHandler = () => {
@@ -15,8 +15,8 @@ const SearchInput = ({ children, extendable, ...props }: SearchInputProps) => {
 
   return (
     <SearchInputStyled className="search" extendable={extendable}>
-      <SearchIcon onClick={onSearchClickHandler} />
-      <input ref={inputRef} {...props} />
+      <SearchIcon onClick={onSearchClickHandler} aria-hidden />
+      <input ref={inputRef} {...props} role="searchbox" spellCheck={false} />
     </SearchInputStyled>
   );
 };
