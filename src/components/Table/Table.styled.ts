@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 const TableStyled = styled.table`
   max-width: 100%;

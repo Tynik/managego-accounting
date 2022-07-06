@@ -1,5 +1,3 @@
-import '@emotion/react';
-
 export type ButtonColor = 'success' | 'info' | 'error' | 'default';
 
 export type ButtonVariant = 'filled' | 'outlined' | 'text' | 'cancel';
@@ -26,8 +24,8 @@ type Button = Record<ButtonVariant, ButtonModifiers>;
 
 type Buttons = Record<ButtonColor, Partial<Button>>;
 
-declare module '@emotion/react' {
-  export interface Theme {
+declare module 'styled-components' {
+  export interface DefaultTheme {
     primary: {
       color: {
         primary: string;

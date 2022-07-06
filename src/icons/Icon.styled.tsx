@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export type IconStyledProps = {
   rotate?: number;

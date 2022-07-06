@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, TableHTMLAttributes } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 import TableStyled from './Table.styled';
 

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 const TableHeadStyled = styled.thead`
   font-size: 0.875rem;

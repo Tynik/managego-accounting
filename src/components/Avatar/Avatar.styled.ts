@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 const AvatarStyled = styled.img`
   width: 2.125rem;

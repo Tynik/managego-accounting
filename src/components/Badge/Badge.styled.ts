@@ -1,5 +1,4 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import styled, { css } from 'styled-components';
 
 export type BadgeStyledProps = {
   vertical?: 'bottom' | 'top';

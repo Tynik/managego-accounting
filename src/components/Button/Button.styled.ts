@@ -1,8 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import styled, { css } from 'styled-components';
 
-import type { ButtonColor, ButtonVariant } from '~/emotion';
+import type { ButtonColor, ButtonVariant } from '~/styled-components';
 
 const sizes: Record<ButtonStyledProps['size'], string> = {
   small: '5.625rem',
